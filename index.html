@@ -48,24 +48,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .site-logo {
-    height: 50px; /* Aap apni pasand ke mutabik height badal sakte hain */
-    width: auto;  /* Isse logo ka aspect ratio kharab nahi hoga */
-    display: block;
-}
+            height: 50px;
+            width: auto;
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-brand-lightyellow text-gray-800 font-sans animate-fadeIn">
 
     <header class="bg-white/95 backdrop-blur-md shadow-md fixed w-full top-0 z-50 border-b border-yellow-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
-                <!-- Logo Container -->
-<div class="flex items-center space-x-4 cursor-pointer" onclick="navigateTo('home')">
-    <div class="h-16 w-16 flex items-center justify-center overflow-hidden">
-        <img src="images\IMG_0125.PNG" alt="Indori Logo" class="h-16 w-auto object-contain transform -rotate-90 origin-center scale-125" onerror="this.src='images/image.png';">
-    </div>
-
-</div>>
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">
+                <div class="flex items-center space-x-4 cursor-pointer">
+                    <div class="h-16 w-16 flex items-center justify-center overflow-hidden">
+                        <img src="images\IMG_0125.PNG" alt="Indori Logo" class="h-16 w-auto object-contain transform -rotate-90 origin-center scale-125" onerror="this.src='images/image.png';">
+                    </div>
+                </div>
                 <div>
                     <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORE</h1>
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
@@ -73,15 +71,15 @@
             </div>
             
             <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
-                <a href="#home" id="nav-home" class="text-brand-red font-bold border-b-2 border-brand-red transition-all" onclick="navigateTo('home')">Home</a>
-                <a href="#about" id="nav-about" class="hover:text-brand-red transition-all" onclick="navigateTo('home'); setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 200);">About Us</a>
-                <a href="javascript:void(0)" id="nav-products" class="hover:text-brand-red transition-all" onclick="navigateTo('products')">Our Products Menu</a>
-                <a href="#why-us" id="nav-why" class="hover:text-brand-red transition-all" onclick="navigateTo('home'); setTimeout(() => document.getElementById('why-us').scrollIntoView({behavior: 'smooth'}), 200);">Why Choose Us</a>
-                <a href="#contact" id="nav-contact" class="hover:text-brand-red transition-all" onclick="navigateTo('home'); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 200);">Contact Us</a>
+                <a href="#home" class="text-brand-red font-bold transition-all">Home</a>
+                <a href="#about" class="hover:text-brand-red transition-all">About Us</a>
+                <a href="#products-section" class="hover:text-brand-red transition-all">Our Products Menu</a>
+                <a href="#why-us" class="hover:text-brand-red transition-all">Why Choose Us</a>
+                <a href="#contact" class="hover:text-brand-red transition-all">Contact Us</a>
             </nav>
 
             <div class="hidden md:block">
-                <a href="#contact" onclick="navigateTo('home'); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 200);" class="bg-brand-red hover:bg-brand-darkred text-white font-bold py-2 px-5 rounded-full transition-all shadow-md hover:shadow-lg">
+                <a href="#contact" class="bg-brand-red hover:bg-brand-darkred text-white font-bold py-2 px-5 rounded-full transition-all shadow-md hover:shadow-lg">
                     Order Now <i class="fa-solid fa-phone ml-1"></i>
                 </a>
             </div>
@@ -92,16 +90,18 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-yellow-100 py-4 px-6 space-y-3 transition-all">
-            <a href="#home" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="navigateTo('home'); toggleMenu()">Home</a>
-            <a href="#about" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="navigateTo('home'); toggleMenu(); setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 200);">About Us</a>
-            <a href="javascript:void(0)" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="navigateTo('products'); toggleMenu()">Our Products Menu</a>
-            <a href="#why-us" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="navigateTo('home'); toggleMenu(); setTimeout(() => document.getElementById('why-us').scrollIntoView({behavior: 'smooth'}), 200);">Why Choose Us</a>
-            <a href="#contact" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="navigateTo('home'); toggleMenu(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 200);">Contact Us</a>
-            <a href="#contact" class="block text-center bg-brand-red text-white font-bold py-2 px-4 rounded-full" onclick="navigateTo('home'); toggleMenu(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 200);">Order Now</a>
+            <a href="#home" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="toggleMenu()">Home</a>
+            <a href="#about" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="toggleMenu()">About Us</a>
+            <a href="#products-section" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="toggleMenu()">Our Products Menu</a>
+            <a href="#why-us" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="toggleMenu()">Why Choose Us</a>
+            <a href="#contact" class="block font-semibold text-gray-700 hover:text-brand-red" onclick="toggleMenu()">Contact Us</a>
+            <a href="#contact" class="block text-center bg-brand-red text-white font-bold py-2 px-4 rounded-full" onclick="toggleMenu()">Order Now</a>
         </div>
     </header>
 
-    <main id="home-view" class="page-fade">
+    <!-- MAIN WRAPPER (Everything on Single Page) -->
+    <main class="page-fade">
+        
         <!-- Hero Section -->
         <section id="home" class="pt-32 pb-20 md:py-36 bg-gradient-to-b from-amber-100 via-amber-50 to-brand-lightyellow relative overflow-hidden">
             <div class="absolute top-10 left-10 text-6xl opacity-10 animate-bounce">🍌</div>
@@ -117,13 +117,13 @@
                         <span class="text-brand-red font-brand">Dil Ko Bha Jaye!</span>
                     </h1>
                     <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        Pichle 20 saal se bhi zyada ka vishwas. Hum laaye hain aapke liye sabse crispy chatpata banana chips, special fast diet, aur premium Indore namkeen ka khajana.
+                        Pichle 20 saal se bhi zyada ka vishwas. Hum laaye hain aapke liye sabse crispy banana chips, special fast diet, aur premium Indore namkeen ka khajana.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                        <button onclick="navigateTo('products')" class="bg-brand-red hover:bg-brand-darkred text-white text-lg font-bold py-3 px-8 rounded-full transition-all shadow-md text-center">
+                        <a href="#products-section" class="bg-brand-red hover:bg-brand-darkred text-white text-lg font-bold py-3 px-8 rounded-full transition-all shadow-md text-center block">
                             Browse All 50+ Products Menu <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </button>
-                        <a href="#contact" class="bg-amber-100 hover:bg-amber-200 text-brand-brown border-2 border-brand-yellow text-lg font-bold py-3 px-8 rounded-full transition-all text-center">
+                        </a>
+                        <a href="#contact" class="bg-amber-100 hover:bg-amber-200 text-brand-brown border-2 border-brand-yellow text-lg font-bold py-3 px-8 rounded-full transition-all text-center block">
                             Contact Us <i class="fa-solid fa-envelope ml-2"></i>
                         </a>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-3xl overflow-hidden bg-amber-100/80 border-4 border-brand-yellow relative group shadow-xl transform rotate-3">
                         <img src="images/IMG_0111.PNG" alt="Authentic Indore Snacks" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=Indore+Snacks'">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-brown/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-                            <h4 class="font-bold text-xl text-brand-yellow">Indore Chatpata Banana Chips</h4>
+                            <h4 class="font-bold text-xl text-brand-yellow"> Banana Chips</h4>
                             <p class="text-xs text-amber-200 mt-1">Swaad aur Kurkurapan ka Asli Sangam.</p>
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                         Humari shuruat saal <strong>2003</strong> mein Indore ke shuddh aur swadisht khane ke culture se hui thi. 20 saalon se bhi zyada ka safar tay karrke aaj hum ban chuke hain pure Madhya Pradesh ke logon ka sabse pasandida namkeen brand.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        Hum kela wafers ke alawa chatpate unique snacks banate hain, jinhe shuddh tel, saste daam aur premium quality packaging ke sath aap tak pahunchaya jata hai. Har byte mein Indore ki mitti ka authentic swaad mehsoos hoga!
+                        Hum kela wafers ke alawa unique snacks banate hain, jinhe shuddh tel, saste daam aur premium quality packaging ke sath aap tak pahunchaya jata hai. Har byte mein Indore ki mitti ka authentic swaad mehsoos hoga!
                     </p>
                     <div class="flex gap-4">
                         <div class="flex items-center space-x-2 text-brand-red font-semibold text-lg">
@@ -196,7 +196,7 @@
                         </div>
                         <div class="flex items-center space-x-2 text-brand-red font-semibold text-lg">
                             <i class="fa-solid fa-circle-check text-green-500"></i>
-                            <span>Zero Preservatives</span>
+                            <span>Fully Hygienic</span>
                         </div>
                     </div>
                 </div>
@@ -216,15 +216,15 @@
                     <!-- Featured Product 1 -->
                     <div class="product-card bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-sm flex flex-col justify-between">
                         <div class="h-56 bg-amber-50/50 border-b border-amber-100 relative overflow-hidden group">
-                            <img src="images/IMG_0111.PNG" alt="Indore Chatpata Banana Chips" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+2'">
+                            <img src="images/IMG_0111.PNG" alt="Banana Chips" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+2'">
                             <span class="absolute top-3 left-3 bg-brand-yellow text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-md">Top Seller</span>
                         </div>
                         <div class="p-6 text-left space-y-3">
-                            <h4 class="text-xl font-bold text-brand-brown">Indore Chatpata Banana Chips</h4>
+                            <h4 class="text-xl font-bold text-brand-brown">Banana Chips</h4>
                             <p class="text-sm text-gray-500 line-clamp-2">Premium raw bananas se bane ekdum kurkure aur chatpate kela chips. Swaad jo sabka dil jeet le!</p>
                             <div class="flex justify-between items-center pt-2">
                                 <span class="text-xs font-semibold text-gray-700">Pack size: 100g | <b>₹70</b></span>
-                                <button class="text-brand-red font-bold text-sm hover:underline" onclick="openDetailModal('Indore Chatpata Banana Chips', 'p2', 'Premium raw bananas se bane ekdum kurkure aur chatpate kela chips. Ingredients: Raw Banana, Edible Oil, Iodized Salt, Indore Chatpata Masala.', '100g', '₹70', false, 'images/IMG_0111.PNG')">View Details <i class="fa-solid fa-angle-right"></i></button>
+                                <button class="text-brand-red font-bold text-sm hover:underline" onclick="openDetailModal('Banana Chips', 'p2', 'Premium raw bananas se bane ekdum kurkure aur chatpate kela chips. Ingredients: Raw Banana, Edible Oil, Iodized Salt, Indore Chatpata Masala.', '100g', '₹70', false, 'images/IMG_0111.PNG')">View Details <i class="fa-solid fa-angle-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -232,15 +232,15 @@
                     <!-- Featured Product 2 -->
                     <div class="product-card bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-sm flex flex-col justify-between">
                         <div class="h-56 bg-amber-50/50 border-b border-amber-100 relative overflow-hidden group">
-                            <img src="images/51DE9639-7383-4178-92A5-221523D1027E.PNG" alt="Indore Chatpata Namkeen Jalebi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+11'">
+                            <img src="images/51DE9639-7383-4178-92A5-221523D1027E.PNG" alt=" Namkeen Jalebi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+11'">
                             <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-md">Unique Special</span>
                         </div>
                         <div class="p-6 text-left space-y-3">
-                            <h4 class="text-xl font-bold text-brand-brown">Indore Chatpata Namkeen Jalebi</h4>
+                            <h4 class="text-xl font-bold text-brand-brown"> Namkeen Jalebi</h4>
                             <p class="text-sm text-gray-500 line-clamp-2">Unique jalebi-shaped chatpata namkeen crunch, ekdum lajawab aur crispy texture.</p>
                             <div class="flex justify-between items-center pt-2">
                                 <span class="text-xs font-semibold text-gray-700">Pack size: 30pcs | <b>₹75</b></span>
-                                <button class="text-brand-red font-bold text-sm hover:underline" onclick="openDetailModal('Indore Chatpata Namkeen Jalebi', 'p11', 'Unique jalebi-shaped chatpata namkeen crunch, ekdum lajawab aur crispy texture.', '30pcs', '₹75', false, 'images/51DE9639-7383-4178-92A5-221523D1027E.PNG')">View Details <i class="fa-solid fa-angle-right"></i></button>
+                                <button class="text-brand-red font-bold text-sm hover:underline" onclick="openDetailModal(' Namkeen Jalebi', 'p11', 'Unique jalebi-shaped chatpata namkeen crunch, ekdum lajawab aur crispy texture.', '30pcs', '₹75', false, 'images/51DE9639-7383-4178-92A5-221523D1027E.PNG')">View Details <i class="fa-solid fa-angle-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                             <span class="absolute top-3 left-3 bg-brand-yellow text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-md">Vrat Special</span>
                         </div>
                         <div class="p-6 text-left space-y-3">
-                            <h4 class="text-xl font-bold text-brand-brown">Indore Navratri Special Banana Wafers</h4>
+                            <h4 class="text-xl font-bold text-brand-brown"> Navratri Special Banana Wafers</h4>
                             <p class="text-sm text-gray-500 line-clamp-2">Special premium potato and banana wafers lightly salted with sendha namak. Best for all types of fasts.</p>
                             <div class="flex justify-between items-center pt-2">
                                 <span class="text-xs font-semibold text-gray-700">Pack size: 100g | <b>₹70</b></span>
@@ -262,14 +262,60 @@
                     </div>
                 </div>
 
-                <div class="pt-10">
-                    <div class="bg-amber-100/60 p-8 rounded-3xl border-2 border-dashed border-brand-yellow/50 max-w-2xl mx-auto space-y-4">
-                        <h4 class="text-xl font-bold text-brand-brown">Explore Our Complete Varieties of Snacks!</h4>
-                        <p class="text-sm text-gray-600">Hamare paas healthy snacks, traditional chivda, chakli aur dheron varieties hain.</p>
-                        <button onclick="navigateTo('products')" class="inline-flex items-center bg-brand-red hover:bg-brand-darkred text-white font-extrabold py-3 px-8 rounded-full shadow-md hover:shadow-xl transition-all gap-2 text-md">
-                            Show Our All 50+ Products Menu <i class="fa-solid fa-cookie-bite text-xl"></i>
-                        </button>
+            </div>
+        </section>
+
+        <!-- Complete Products Section (Merged Here Seamlessly) -->
+        <section id="products-section" class="pt-24 pb-20 bg-brand-lightyellow scroll-mt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-amber-100 shadow-sm gap-4">
+                    <div class="space-y-1">
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-brown font-brand">Our Specialties Catalog (Total 50+ Items)</h2>
+                        <p class="text-xs text-gray-500 font-semibold uppercase">Showing all premium varieties below including specific Faraali section! 🌟</p>
                     </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-4 justify-between items-center bg-white p-5 rounded-3xl shadow-md border border-yellow-100">
+                    <div class="relative w-full lg:w-96">
+                        <input type="text" id="search-input" placeholder="Apna pasandida snack search karein..." class="w-full pl-10 pr-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center w-full lg:w-auto">
+                        <button class="filter-btn active bg-brand-red text-white py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow" onclick="filterCategory('all', this)">All Snacks</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('healthy', this)">Snacks</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('soya', this)">Soya Snacks</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('traditional', this)">Traditional & Mix</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('wafers', this)">Wafers & Sev</button>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-b border-yellow-200 pb-2">
+                    <h3 class="text-xl font-bold text-brand-brown flex items-center gap-2">
+                        <span>📦</span> General Snacks Menu
+                    </h3>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+                <div id="vrat-section" class="pt-10 space-y-6">
+                    <div class="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-6 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-md">
+                        <div class="space-y-1">
+                            <span class="bg-white/25 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Shuddh Faraali Specials</span>
+                            <h3 class="text-2xl font-black font-brand">Vrat Special (फलाहारी / व्रत स्पेशल)</h3>
+                            <p class="text-xs text-amber-50/90 font-medium">100% Fast-Friendly Ingredients Se Bane Pure Snacks! 🌟</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-2xl text-sm font-bold border border-white/20">
+                            <span>🕉️</span> Shuddh & Fast Safe
+                        </div>
+                    </div>
+                    <div id="vrat-product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+                </div>
+
+                <div id="empty-search-state" class="hidden text-center py-20 space-y-4">
+                    <span class="text-6xl">🔍</span>
+                    <h3 class="text-2xl font-bold text-brand-brown font-brand">Aisa Koi Snack Nahi Mila</h3>
+                    <p class="text-gray-500 max-w-md mx-auto">Kripya koi dusra product search karein ya direct order enquiry form bhar kar complete catalog mangwayein.</p>
+                    <button onclick="clearSearch()" class="bg-brand-red text-white font-bold py-2 px-6 rounded-full text-sm shadow-md hover:bg-brand-darkred">Sari Range Dekhein</button>
                 </div>
             </div>
         </section>
@@ -283,14 +329,7 @@
                     <p class="text-gray-600 max-w-xl mx-auto">Humne saalon se apke vishwas aur taste ko hi sabse uncha mana hai.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4">
-                        <div class="w-16 h-16 bg-brand-yellow/20 text-brand-red text-2xl flex items-center justify-center rounded-2xl mx-auto">
-                            <i class="fa-solid fa-seedling"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-brand-brown">Shuddh Aur Fresh</h3>
-                        <p class="text-gray-600">Hum kisi bhi product me artificial chemical ya unhealthy colors use nahi karte. Har packet bilkul fresh aur shuddh tel me banaya jata hai.</p>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4">
                         <div class="w-16 h-16 bg-brand-yellow/20 text-brand-red text-2xl flex items-center justify-center rounded-2xl mx-auto">
                             <i class="fa-solid fa-fire"></i>
@@ -369,73 +408,9 @@
         </section>
     </main>
 
-    <!-- Complete Products View Menu -->
-    <main id="products-view" class="hidden page-fade pt-24 min-h-screen bg-brand-lightyellow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-amber-100 shadow-sm gap-4">
-                <div class="space-y-1">
-                    <div class="flex items-center space-x-2 text-xs font-semibold text-gray-400 uppercase">
-                        <span class="hover:text-brand-red cursor-pointer" onclick="navigateTo('home')">Home</span>
-                        <span><i class="fa-solid fa-angle-right text-[10px]"></i></span>
-                        <span class="text-brand-red">Our Complete Products Menu</span>
-                    </div>
-                    <h2 class="text-2xl md:text-3xl font-black text-brand-brown font-brand">Our Specialties Catalog (Total 50+ Items)</h2>
-                    <p class="text-xs text-gray-500 font-semibold uppercase">Showing all premium varieties below including specific Faraali section! 🌟</p>
-                </div>
-                <button onclick="navigateTo('home')" class="flex items-center bg-amber-50 hover:bg-brand-yellow/15 border border-brand-yellow text-brand-brown font-bold px-5 py-2.5 rounded-full transition-all text-sm gap-2">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Home Page
-                </button>
-            </div>
-
-            <div class="flex flex-col lg:flex-row gap-4 justify-between items-center bg-white p-5 rounded-3xl shadow-md border border-yellow-100">
-                <div class="relative w-full lg:w-96">
-                    <input type="text" id="search-input" placeholder="Apna pasandida snack search karein..." class="w-full pl-10 pr-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400"></i>
-                </div>
-                <div class="flex flex-wrap gap-2 justify-center w-full lg:w-auto">
-                    <button class="filter-btn active bg-brand-red text-white py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow" onclick="filterCategory('all', this)">All Snacks</button>
-                    <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('healthy', this)">Healthy Snacks</button>
-                    <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('soya', this)">Soya Snacks</button>
-                    <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('traditional', this)">Traditional & Mix</button>
-                    <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('wafers', this)">Wafers & Sev</button>
-                </div>
-            </div>
-
-            <div class="pt-4 border-b border-yellow-200 pb-2">
-                <h3 class="text-xl font-bold text-brand-brown flex items-center gap-2">
-                    <span>📦</span> General Snacks Menu
-                </h3>
-            </div>
-
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-
-            <div id="vrat-section" class="pt-10 space-y-6">
-                <div class="bg-gradient-to-r from-amber-500 to-yellow-500 text-white p-6 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 shadow-md">
-                    <div class="space-y-1">
-                        <span class="bg-white/25 text-white font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Shuddh Faraali Specials</span>
-                        <h3 class="text-2xl font-black font-brand">Vrat Special (फलाहारी / व्रत स्पेशल)</h3>
-                        <p class="text-xs text-amber-50/90 font-medium">100% Fast-Friendly Ingredients Se Bane Pure Snacks! 🌟</p>
-                    </div>
-                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-2xl text-sm font-bold border border-white/20">
-                        <span>🕉️</span> Shuddh & Fast Safe
-                    </div>
-                </div>
-                <div id="vrat-product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
-            </div>
-
-            <div id="empty-search-state" class="hidden text-center py-20 space-y-4">
-                <span class="text-6xl">🔍</span>
-                <h3 class="text-2xl font-bold text-brand-brown font-brand">Aisa Koi Snack Nahi Mila</h3>
-                <p class="text-gray-500 max-w-md mx-auto">Kripya koi dusra product search karein ya direct order enquiry form bhar kar complete catalog mangwayein.</p>
-                <button onclick="clearSearch()" class="bg-brand-red text-white font-bold py-2 px-6 rounded-full text-sm shadow-md hover:bg-brand-darkred">Sari Range Dekhein</button>
-            </div>
-        </div>
-    </main>
-
-    <!-- Popups -->
+    <!-- Popups / Modals -->
     <div id="detail-modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl relative border border-amber-100 animate-fadeIn">
-            <!-- FIXED ON CLICK AND Z-INDEX FOR MOBILE OVERLAP -->
             <button onclick="event.stopPropagation(); closeDetailModal()" class="absolute top-4 right-4 bg-gray-100 hover:bg-brand-red hover:text-white transition-colors p-2.5 rounded-full z-50 shadow-md">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -524,70 +499,29 @@
         </div>
     </footer>
 
-    <!-- DYNAMIC DATA ARRAY SECTION -->
+    <!-- DATA & SCRIPTS -->
     <script>
         const ALL_PRODUCTS = [
-            // S.No 1 - 10
-            { id: "p1", sNo: 1, name: "Indore 3D Triangle Crunchy Snacks", category: "healthy", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
-            { id: "p2", sNo: 2, name: "Indore Chatpata Banana Chips", category: "wafers", description: "Crispy banana slices seasoned with fine chatpata spices.", sizes: "100g", price: "₹70", badge: "Best Seller", image: "images/IMG_0111.PNG" },
-            { id: "p3", sNo: 3, name: "Indore Soya Chips Pudina Flavor", category: "soya", description: "Healthy Soya chips flavored with a punch of fresh green mint extracts.", sizes: "200g", price: "₹90", badge: "Mint Special", image: "images/IMG_0112.PNG" },
-            { id: "p4", sNo: 4, name: "Indore Crispy Soya Sticks", category: "soya", description: "Nutritious and light-weight crunchy soya flour sticks.", sizes: "200g", price: "₹90", badge: "High Fiber", image: "images/IMG_0113.PNG" },
-            { id: "v5", sNo: 5, name: "Indore Vrat Ke Liye Special Diet (Pipe)", category: "vrat", description: "Fasting special hollow crunchy pipelined delicious light bites.", sizes: "100g", price: "₹60", badge: "Faraal Safe", image: "images/IMG_0114.PNG" },
-            { id: "p6", sNo: 6, name: "Indore Special Diet Crunchy Waves", category: "healthy", description: "Wave shaped low-fat delicious light healthy snack.", sizes: "100g", price: "₹65", badge: "Diet Friendly", image: "images/IMG_0115.PNG" },
-            { id: "v7", sNo: 7, name: "Indore Navratri Special Banana Wafers", category: "vrat", description: "Pure rock-salted thin golden raw banana slices crafted carefully for fasts.", sizes: "100g", price: "₹70", badge: "Vrat Premium", image: "images/IMG_0116.PNG" },
-            { id: "p8", sNo: 8, name: "Indore Special Diet Spiral Twist", category: "healthy", description: "Fun spiral shape with ultimate crunchy unique flavor.", sizes: "100g", price: "₹60", badge: "Kids Choice", image: "images/IMG_0117.PNG" },
-            { id: "p9", sNo: 9, name: "Indore Healthy Raagi Chips", category: "healthy", description: "Super healthy raagi rich flour crisps with premium taste.", sizes: "200g", price: "₹100", badge: "Healthy King", image: "images/IMG_0118.PNG" },
-            { id: "p10", sNo: 10, name: "Indore Special Diet Screw Snacks", category: "healthy", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
-            
-            // S.No 11 - 20
-            { id: "p11", sNo: 11, name: "Indore Chatpata Namkeen Jalebi", category: "traditional", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
-            { id: "v12", sNo: 12, name: "Indore Special Diet (Vrat Ke Liye - Square)", category: "vrat", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },
-            { id: "p13", sNo: 13, name: "Indore Crunchy Oats Chips", category: "healthy", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
-            { id: "p14", sNo: 14, name: "Indore Chatpata Soya Katori", category: "soya", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
-            { id: "p15", sNo: 15, name: "Indore Chatpata Namkeen Jalebi (Combo View)", category: "traditional", description: "Perfect party combo view package of chatpata jalebi namkeen.", sizes: "30pcs", price: "₹75", badge: "Combo Pick", image: "images/A45640B5-0126-43FC-BB0A-10815A6F686D.PNG" },
-            { id: "p16", sNo: 16, name: "Indore Healthy Beetroot Chips", category: "healthy", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
-            { id: "p17", sNo: 17, name: "Indore Special Snacks Ring Style", category: "traditional", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
-            { id: "p18", sNo: 18, name: "Indore Nutritious Multigrain Chips", category: "healthy", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
-            { id: "p19", sNo: 19, name: "Indore Traditional Butter Chakli", category: "traditional", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
-            { id: "p20", sNo: 20, name: "Indore Refreshing Pudina Chakli", category: "traditional", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" },
-            
-            // S.No 21 - 30
-            { id: "p21", sNo: 21, name: "Indore Tasty Chana Jor Garam", category: "traditional", description: "Flattened black roasted chickpeas loaded with heavy tang.", sizes: "200g", price: "₹60", badge: "Desi Swaad", image: "" },
-            { id: "v22", sNo: 22, name: "Indore Special Diet (Makhana Pops)", category: "vrat", description: "Premium puffy white foxnuts roasted cleanly with minor sendha salt.", sizes: "100g", price: "₹80", badge: "Pure Ghee Pop", image: "" },
-            { id: "p23", sNo: 23, name: "Indore Corn Flakes Mixture", category: "traditional", description: "Crispy fried golden corn flakes mixed beautifully with sweet peanuts.", sizes: "250g", price: "₹75", badge: "Tea-Time Hit", image: "" },
-            { id: "p24", sNo: 24, name: "Indore Aloo Bhujia (Classic Crisp)", category: "wafers", description: "Ultra-thin potato and chickpea dynamic strings tossed with fresh spices.", sizes: "200g", price: "₹65", badge: "Evergreen", image: "" },
-            { id: "p25", sNo: 25, name: "Indore Premium Roasted Kaju", category: "traditional", description: "Luxury grade handpicked whole cashews smoothly roasted with light ghee.", sizes: "150g", price: "₹180", badge: "Premium Shahi", image: "" },
-            { id: "p26", sNo: 26, name: "Indore Masala Peanuts (Sing Bhujia)", category: "traditional", description: "Crunchy flour coated spicy savory peanuts deep fried to perfection.", sizes: "200g", price: "₹60", badge: "Chatpata", image: "" },
-            { id: "p27", sNo: 27, name: "Indore Khatta Meetha Mixture", category: "traditional", description: "Mind-blowing combination of sweet and tangy savory crispy sev noodles.", sizes: "250g", price: "₹70", badge: "All Time Fav", image: "" },
-            { id: "p28", sNo: 28, name: "Indore Ratlami Sev (Spicy & Bold)", category: "wafers", description: "Heavy clove and asafoetida loaded hot spicy bold besan sev.", sizes: "200g", price: "₹70", badge: "Indore Icon 🌶", image: "" },
-            { id: "p29", sNo: 29, name: "Indore Moong Dal Premium", category: "traditional", description: "Lightly salted, protein rich crispy washed green gram pulses.", sizes: "200g", price: "₹65", badge: "Light Crisp", image: "" },
-            { id: "p30", sNo: 30, name: "Indore Diet Mixture (Zero Oil)", category: "healthy", description: "Healthy light weight grain flakes roasted completely oil-free.", sizes: "150g", price: "₹80", badge: "Weight Care", image: "" },
-
-            // S.No 31 - 40
-            { id: "p31", sNo: 31, name: "Indore Special Tomato Wafers", category: "wafers", description: "Tangy and sweet tomato flavored crispy potato wafers.", sizes: "100g", price: "₹65", badge: "Tangy Special", image: "" },
-            { id: "p32", sNo: 32, name: "Indore Peri Peri Banana Chips", category: "wafers", description: "Spicy African peri-peri flavored hot raw banana crisps.", sizes: "100g", price: "₹75", badge: "Super Spicy 🌶", image: "" },
-            { id: "p33", sNo: 33, name: "Indore Roasted Flax Seeds Mix", category: "healthy", description: "Super healthy toasted flax seeds with light Indian spices.", sizes: "150g", price: "₹90", badge: "Omega Rich", image: "" },
-            { id: "p34", sNo: 34, name: "Indore Soya Cups Masala Blast", category: "soya", description: "Cup-shaped mini soya treats filled with dynamic spicy aroma.", sizes: "200g", price: "₹75", badge: "Masala Blast", image: "" },
-            { id: "v35", sNo: 35, name: "Indore Faraali Sabudana Khichdi Mix", category: "vrat", description: "Fried sabudana pearls mixed with roasted peanuts and sendha namak.", sizes: "200g", price: "₹80", badge: "Vrat Classic", image: "" },
-            { id: "p36", sNo: 36, name: "Indore Diet Roasted Chana Masala", category: "healthy", description: "Oil-free roasted black gram tossed with low sodium mild spices.", sizes: "250g", price: "₹60", badge: "Zero Oil", image: "" },
-            { id: "p37", sNo: 37, name: "Indore Crunchy Garlic Sev", category: "wafers", description: "Traditional gram flour noodles heavily infused with rich fresh garlic flavor.", sizes: "200g", price: "₹70", badge: "Garlic Twist", image: "" },
-            { id: "p38", sNo: 38, name: "Indore Sweet & Sour Poha Chivda", category: "traditional", description: "Light roasted rice flakes mixed with premium raisins and crispy curry leaves.", sizes: "250g", price: "₹65", badge: "Light Snack", image: "" },
-            { id: "p39", sNo: 39, name: "Indore Premium Salted Almonds", category: "traditional", description: "California crunchy whole almonds lightly tossed in vacuum salt.", sizes: "150g", price: "₹190", badge: "Premium Nuts", image: "" },
-            { id: "p40", sNo: 40, name: "Indore Dynamic Cheese Balls", category: "traditional", description: "Fluffy melted cheese flavored light corn round balls.", sizes: "75g", price: "₹50", badge: "Cheese Delight", image: "" },
-
-            // S.No 41 - 52
-            { id: "p41", sNo: 41, name: "Indore Ujjaini Sev (Medium Spicy)", category: "wafers", description: "The iconic royal soft textured medium spice classic Indore style sev.", sizes: "200g", price: "₹70", badge: "Indore Pride", image: "" },
-            { id: "p42", sNo: 42, name: "Indore Corn Tortilla Chips", category: "healthy", description: "Crispy roasted yellow corn authentic triangle tortilla chips.", sizes: "150g", price: "₹80", badge: "Mexican Style", image: "" },
-            { id: "p43", sNo: 43, name: "Indore Crunchy Quinoa Puffs", category: "healthy", description: "Superfood quinoa puffs perfectly roasted with light tangy tomato flavor.", sizes: "100g", price: "₹95", badge: "Fitness First", image: "" },
-            { id: "p44", sNo: 44, name: "Indore Soya Gattha Premium", category: "soya", description: "Thick crunchy traditional soya sticks loaded with dynamic dry spices.", sizes: "250g", price: "₹80", badge: "Tea Partner", image: "" },
-            { id: "v45", sNo: 45, name: "Indore Faraali Aloo Lacha Mixture", category: "vrat", description: "Shredded potato sticks mixed with premium cashews and fast rock salt.", sizes: "150g", price: "₹90", badge: "Shubh Faraal", image: "" },
-            { id: "p46", sNo: 46, name: "Indore Longi Sev (Spicy Clove Blast)", category: "wafers", description: "Extra hot fine chickpea strands blended with real grounded black cloves.", sizes: "200g", price: "₹75", badge: "Extra Spicy 🌶", image: "" },
-            { id: "p47", sNo: 47, name: "Indore Shahi Navratan Mixture", category: "traditional", description: "A high-end dynamic combination of 9 distinct savory components and dry fruits.", sizes: "250g", price: "₹85", badge: "Royal Mix", image: "" },
-            { id: "p48", sNo: 48, name: "Indore Roasted Pumpkin Seeds", category: "healthy", description: "Lightly salted completely organic healthy super seeds for active immunity.", sizes: "150g", price: "₹120", badge: "Immunity Booster", image: "" },
-            { id: "p49", sNo: 49, name: "Indore Traditional Methi Puri", category: "traditional", description: "Flaky crispy round wheat flour snacks layered with pure dried fenugreek leaves.", sizes: "200g", price: "₹70", badge: "Methi Special", image: "" },
-            { id: "p50", sNo: 50, name: "Indore Chatpata Achari Matri", category: "traditional", description: "Traditional punjabi pickle styled sour savory matching dry crackers.", sizes: "200g", price: "₹70", badge: "Achari Twist", image: "" },
-            { id: "p51", sNo: 51, name: "Indore Healthy Wheat Khakhra", category: "healthy", description: "Thin roasted crispy handmade flatbread circles with chatpata masala.", sizes: "250g", price: "₹80", badge: "100% Roasted", image: "" },
-            { id: "v52", sNo: 52, name: "Indore Sweet Faraali Potato Chips", category: "vrat", description: "Sweet and crisp golden potato thin wafers curated beautifully for fast days.", sizes: "100g", price: "₹70", badge: "Sweet Vrat", image: "" }
+            { id: "p1", sNo: 1, name: " 3D Triangle Crunchy Snacks", category: "healthy", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
+            { id: "p2", sNo: 2, name: " Banana Chips", category: "wafers", description: "Crispy banana slices seasoned with fine chatpata spices.", sizes: "100g", price: "₹70", badge: "Best Seller", image: "images/IMG_0111.PNG" },
+            { id: "p3", sNo: 3, name: " Soya Chips Pudina Flavor", category: "soya", description: "Healthy Soya chips flavored with a punch of fresh green mint extracts.", sizes: "200g", price: "₹90", badge: "Mint Special", image: "images/IMG_0112.PNG" },
+            { id: "p4", sNo: 4, name: " Crispy Soya Sticks", category: "soya", description: "Nutritious and light-weight crunchy soya flour sticks.", sizes: "200g", price: "₹90", badge: "High Fiber", image: "images/IMG_0113.PNG" },
+            { id: "v5", sNo: 5, name: " Vrat Ke Liye Special Diet (Pipe)", category: "vrat", description: "Fasting special hollow crunchy pipelined delicious light bites.", sizes: "100g", price: "₹60", badge: "Faraal Safe", image: "images/IMG_0114.PNG" },
+            { id: "p6", sNo: 6, name: " Special Diet Crunchy Waves", category: "healthy", description: "Wave shaped low-fat delicious light healthy snack.", sizes: "100g", price: "₹65", badge: "Diet Friendly", image: "images/IMG_0115.PNG" },
+            { id: "v7", sNo: 7, name: " Navratri Special Banana Wafers", category: "vrat", description: "Pure rock-salted thin golden raw banana slices crafted carefully for fasts.", sizes: "100g", price: "₹70", badge: "Vrat Premium", image: "images/IMG_0116.PNG" },
+            { id: "p8", sNo: 8, name: " Special Diet Spiral Twist", category: "healthy", description: "Fun spiral shape with ultimate crunchy unique flavor.", sizes: "100g", price: "₹60", badge: "Kids Choice", image: "images/IMG_0117.PNG" },
+            { id: "p9", sNo: 9, name: " Healthy Raagi Chips", category: "healthy", description: "Super healthy raagi rich flour crisps with premium taste.", sizes: "200g", price: "₹100", badge: "Healthy King", image: "images/IMG_0118.PNG" },
+            { id: "p10", sNo: 10, name: " Special Diet Screw Snacks", category: "healthy", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
+            { id: "p11", sNo: 11, name: "  Namkeen Jalebi", category: "traditional", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
+            { id: "v12", sNo: 12, name: " Special Diet (Vrat Ke Liye - Square)", category: "vrat", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },
+            { id: "p13", sNo: 13, name: " Crunchy Oats Chips", category: "healthy", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
+            { id: "p14", sNo: 14, name: " Soya Katori", category: "soya", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
+            { id: "p15", sNo: 15, name: " Namkeen Jalebi (Combo View)", category: "traditional", description: "Perfect party combo view package of chatpata jalebi namkeen.", sizes: "30pcs", price: "₹75", badge: "Combo Pick", image: "images/A45640B5-0126-43FC-BB0A-10815A6F686D.PNG" },
+            { id: "p16", sNo: 16, name: "Healthy Beetroot Chips", category: "healthy", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
+            { id: "p17", sNo: 17, name: "Special Snacks Ring Style", category: "traditional", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
+            { id: "p18", sNo: 18, name: "Nutritious Multigrain Chips", category: "healthy", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
+            { id: "p19", sNo: 19, name: "Traditional Butter Chakli", category: "traditional", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
+            { id: "p20", sNo: 20, name:  "Refreshing Pudina Chakli", category: "traditional", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" }
         ];
 
         let currentActiveTitle = "";
@@ -596,7 +530,6 @@
         window.onload = function() {
             renderProductsGrid();
             populateContactFormDropdown();
-            navigateTo('home');
         };
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -604,26 +537,6 @@
 
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         function toggleMenu() { mobileMenu.classList.add('hidden'); }
-
-        function navigateTo(page) {
-            const homeView = document.getElementById('home-view');
-            const productsView = document.getElementById('products-view');
-            const navHome = document.getElementById('nav-home');
-            const navProducts = document.getElementById('nav-products');
-
-            if (page === 'products') {
-                homeView.classList.add('hidden');
-                productsView.classList.remove('hidden');
-                navProducts.className = "text-brand-red font-bold border-b-2 border-brand-red transition-all";
-                navHome.className = "hover:text-brand-red transition-all text-gray-700 font-semibold";
-            } else {
-                productsView.classList.add('hidden');
-                homeView.classList.remove('hidden');
-                navHome.className = "text-brand-red font-bold border-b-2 border-brand-red transition-all";
-                navProducts.className = "hover:text-brand-red transition-all text-gray-700 font-semibold";
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
 
         function renderProductsGrid() {
             const generalGrid = document.getElementById('product-grid');
@@ -750,8 +663,7 @@
             const selectDropdown = document.getElementById('cust-snack');
             selectDropdown.value = currentActiveTitle;
             closeDetailModal();
-            navigateTo('home');
-            setTimeout(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 300);
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
         function handleFormSubmit(event) {
