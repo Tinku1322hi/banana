@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indori Banana Wafers & Namkeen - Authentic Taste Since 2003</title>
+    <title>Indore Banana Wafers & Namkeen - Authentic Taste Since 2003</title>
     <!-- Tailwind CSS for modern and premium styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
             <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
                 <span class="text-3xl">🍌</span>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORI</h1>
+                    <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORE</h1>
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
                 </div>
             </div>
@@ -99,10 +99,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 text-center md:text-left">
                     <span class="inline-block bg-brand-red/10 text-brand-red font-bold py-1 px-4 rounded-full text-sm">
-                        ✨ Swadisht Indori Swaad Since 2003
+                        ✨ Swadisht Indore Swaad Since 2003
                     </span>
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-brand-brown leading-tight">
-                        Indori Swaad Jo <br class="hidden sm:inline">
+                        Indore Swaad Jo <br class="hidden sm:inline">
                         <span class="text-brand-red font-brand">Dil Ko Bha Jaye!</span>
                     </h1>
                     <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0 leading-relaxed">
@@ -727,7 +727,16 @@
             document.body.style.overflow = 'hidden';
         }
 
-        function closeDetailModal() { document.getElementById('detail-modal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+       function closeDetailModal(event) {
+    // Agar koi event click hai, toh use aage badhne se roko (Stop Event Bubbling)
+    if (event) {
+        event.stopPropagation();
+    }
+    
+    // Popup ko band karne ka code
+    document.getElementById('detail-modal').classList.add('hidden'); 
+    document.body.style.overflow = 'auto'; 
+}
         function openLightbox() {
             document.getElementById('lightbox-title').innerText = currentActiveTitle;
             document.getElementById('lightbox-image').src = currentActiveImage;
