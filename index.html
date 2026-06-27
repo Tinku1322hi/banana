@@ -47,6 +47,11 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .site-logo {
+    height: 50px; /* Aap apni pasand ke mutabik height badal sakte hain */
+    width: auto;  /* Isse logo ka aspect ratio kharab nahi hoga */
+    display: block;
+}
     </style>
 </head>
 <body class="bg-brand-lightyellow text-gray-800 font-sans animate-fadeIn">
@@ -54,7 +59,13 @@
     <header class="bg-white/95 backdrop-blur-md shadow-md fixed w-full top-0 z-50 border-b border-yellow-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
-                <span class="text-3xl">🍌</span>
+                <!-- Logo Container -->
+<div class="flex items-center space-x-4 cursor-pointer" onclick="navigateTo('home')">
+    <div class="h-16 w-16 flex items-center justify-center overflow-hidden">
+        <img src="images\IMG_0125.PNG" alt="Indori Logo" class="h-16 w-auto object-contain transform -rotate-90 origin-center scale-125" onerror="this.src='images/image.png';">
+    </div>
+
+</div>>
                 <div>
                     <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORE</h1>
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
