@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indore Banana Wafers & Namkeen - Authentic Taste Since 2003</title>
-    <!-- Tailwind CSS for modern and premium styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -61,12 +60,16 @@
             <div class="flex items-center space-x-2 cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})">
                 <div class="flex items-center space-x-4 cursor-pointer">
                     <div class="h-16 w-16 flex items-center justify-center overflow-hidden">
-                        <img src="images\IMG_0125.PNG" alt="Indori Logo" class="h-16 w-auto object-contain transform -rotate-90 origin-center scale-125" onerror="this.src='images/image.png';">
+                        <img src="images/IMG_0125.PNG" alt="Indori Logo" class="h-16 w-auto object-contain transform -rotate-90 origin-center scale-125" onerror="this.src='images/image.png';">
                     </div>
                 </div>
                 <div>
                     <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORE</h1>
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
+                    <div class="flex flex-col text-[8px] font-bold text-gray-500 tracking-wider leading-tight">
+                        <span>GSTIN: 03BNCPM2835B1ZM</span>
+                        <span class="text-emerald-600 font-semibold flex items-center gap-0.5">🟢 FSSAI Lic: 22120668000125</span>
+                    </div>
                 </div>
             </div>
             
@@ -84,7 +87,8 @@
                 </a>
             </div>
 
-            <button id="mobile-menu-btn" class="md:hidden text-brand-red text-2xl focus:outline-none">
+            <!-- FIXED ISSUE 1: Added aria-label for Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-brand-red text-2xl focus:outline-none" aria-label="Toggle mobile navigation menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -99,10 +103,8 @@
         </div>
     </header>
 
-    <!-- MAIN WRAPPER (Everything on Single Page) -->
     <main class="page-fade">
         
-        <!-- Hero Section -->
         <section id="home" class="pt-32 pb-20 md:py-36 bg-gradient-to-b from-amber-100 via-amber-50 to-brand-lightyellow relative overflow-hidden">
             <div class="absolute top-10 left-10 text-6xl opacity-10 animate-bounce">🍌</div>
             <div class="absolute bottom-10 right-10 text-6xl opacity-10 animate-pulse">🌶️</div>
@@ -121,7 +123,7 @@
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                         <a href="#products-section" class="bg-brand-red hover:bg-brand-darkred text-white text-lg font-bold py-3 px-8 rounded-full transition-all shadow-md text-center block">
-                            Browse All 50+ Products Menu <i class="fa-solid fa-arrow-right ml-2"></i>
+                            Browse All Products Menu <i class="fa-solid fa-arrow-right ml-2"></i>
                         </a>
                         <a href="#contact" class="bg-amber-100 hover:bg-amber-200 text-brand-brown border-2 border-brand-yellow text-lg font-bold py-3 px-8 rounded-full transition-all text-center block">
                             Contact Us <i class="fa-solid fa-envelope ml-2"></i>
@@ -142,7 +144,6 @@
             </div>
         </section>
 
-        <!-- Stats -->
         <div class="bg-brand-brown py-8 text-white relative z-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
@@ -150,7 +151,7 @@
                     <p class="text-sm md:text-base font-medium text-amber-200">Years of Experience (Since 2003)</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-black text-brand-yellow">50+</p>
+                    <p class="text-4xl md:text-5xl font-black text-brand-yellow">26</p>
                     <p class="text-sm md:text-base font-medium text-amber-200">Total Snack Items & Varieties</p>
                 </div>
                 <div>
@@ -164,7 +165,6 @@
             </div>
         </div>
 
-        <!-- About Us -->
         <section id="about" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                 <div class="grid grid-cols-2 gap-4">
@@ -187,9 +187,9 @@
                         Humari shuruat saal <strong>2003</strong> mein Indore ke shuddh aur swadisht khane ke culture se hui thi. 20 saalon se bhi zyada ka safar tay karrke aaj hum ban chuke hain pure Madhya Pradesh ke logon ka sabse pasandida namkeen brand.
                     </p>
                     <p class="text-gray-600 leading-relaxed">
-                        Hum kela wafers ke alawa unique snacks banate hain, jinhe shuddh tel, saste daam aur premium quality packaging ke sath aap tak pahunchaya jata hai. Har byte mein Indore ki mitti ka authentic swaad mehsoos hoga!
+                        Hum kela wafers ke alawa unique snacks banate hain, jinhe shuddh tel, reasonable price aur premium quality packaging ke sath aap tak pahunchaya jata hai. Har byte mein Indore ki mitti ka authentic swaad mehsoos hoga!
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex flex-wrap gap-4">
                         <div class="flex items-center space-x-2 text-brand-red font-semibold text-lg">
                             <i class="fa-solid fa-circle-check text-green-500"></i>
                             <span>Pure Veg</span>
@@ -198,22 +198,24 @@
                             <i class="fa-solid fa-circle-check text-green-500"></i>
                             <span>Fully Hygienic</span>
                         </div>
+                        <div class="flex items-center space-x-2 text-brand-red font-semibold text-lg">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span>📋 FSSAI Approved</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Home Featured Products -->
         <section class="py-20 bg-brand-lightyellow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
                 <div class="space-y-2">
                     <span class="text-xs font-bold text-brand-red uppercase tracking-widest">Our Specialties</span>
-                    <h2 class="text-3xl md:text-5xl font-black text-brand-brown">Hamare Khaas Swadisht Products</h2>
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-brown">Hamare Khaas Products</h2>
                     <p class="text-gray-600 max-w-xl mx-auto">Hamare menu mein se kuch sabse mashhoor items jo har ghar ki pasand hain.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                    <!-- Featured Product 1 -->
                     <div class="product-card bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-sm flex flex-col justify-between">
                         <div class="h-56 bg-amber-50/50 border-b border-amber-100 relative overflow-hidden group">
                             <img src="images/IMG_0111.PNG" alt="Banana Chips" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+2'">
@@ -229,7 +231,6 @@
                         </div>
                     </div>
 
-                    <!-- Featured Product 2 -->
                     <div class="product-card bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-sm flex flex-col justify-between">
                         <div class="h-56 bg-amber-50/50 border-b border-amber-100 relative overflow-hidden group">
                             <img src="images/51DE9639-7383-4178-92A5-221523D1027E.PNG" alt=" Namkeen Jalebi" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+11'">
@@ -245,7 +246,6 @@
                         </div>
                     </div>
 
-                    <!-- Featured Product 3 -->
                     <div class="product-card bg-white rounded-3xl overflow-hidden border border-amber-100 shadow-sm flex flex-col justify-between">
                         <div class="h-56 bg-amber-50/50 border-b border-amber-100 relative overflow-hidden group">
                             <img src="images/IMG_0116.PNG" alt="Indore Navratri Special Banana Wafers" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+7'">
@@ -265,12 +265,11 @@
             </div>
         </section>
 
-        <!-- Complete Products Section (Merged Here Seamlessly) -->
         <section id="products-section" class="pt-24 pb-20 bg-brand-lightyellow scroll-mt-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-amber-100 shadow-sm gap-4">
                     <div class="space-y-1">
-                        <h2 class="text-2xl md:text-3xl font-black text-brand-brown font-brand">Our Specialties Catalog (Total 50+ Items)</h2>
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-brown font-brand">Our Specialties Catalog</h2>
                         <p class="text-xs text-gray-500 font-semibold uppercase">Showing all premium varieties below including specific Faraali section! 🌟</p>
                     </div>
                 </div>
@@ -320,7 +319,6 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
         <section id="why-us" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
                 <div class="space-y-2">
@@ -329,15 +327,40 @@
                     <p class="text-gray-600 max-w-xl mx-auto">Humne saalon se apke vishwas aur taste ko hi sabse uncha mana hai.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4 flex flex-col justify-center">
                         <div class="w-16 h-16 bg-brand-yellow/20 text-brand-red text-2xl flex items-center justify-center rounded-2xl mx-auto">
                             <i class="fa-solid fa-fire"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-brand-brown">Classic Indore Taste</h3>
                         <p class="text-gray-600">Hamare pasandida masala recipes Indore ke traditional tarike se bane hain. Authentic chatpata and spicy lajawab taste milega.</p>
                     </div>
-                    <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4">
+                    
+                    <div class="bg-brand-lightyellow p-8 rounded-3xl border-2 border-emerald-500 space-y-5 shadow-lg bg-gradient-to-b from-white to-emerald-50/30 relative">
+                        <div class="w-16 h-12 bg-emerald-100 text-emerald-600 text-2xl flex items-center justify-center rounded-xl mx-auto font-black tracking-tighter">
+                            fssai
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-xl font-bold text-emerald-800">Govt. Approved Quality</h3>
+                            <p class="text-xs bg-emerald-600 text-white font-mono py-1 px-3 rounded-md inline-block tracking-wide font-bold">Lic No. 22120668000125</p>
+                        </div>
+                        
+                        <div class="border-t border-dashed border-emerald-200 my-2"></div>
+                        
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
+                                <img src="/images/make-in-india-logo.png" alt="Make In India" class="w-full h-12 object-contain" onerror="this.src='https://placehold.co/100x50?text=Make+In+India'">
+                                <span class="text-[9px] font-extrabold text-black tracking-tight uppercase mt-1">MAKE IN INDIA</span>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
+                                <img src="images/swach-bharat-logo.png" alt="Swachh Bharat" class="w-full h-12 object-contain" onerror="this.src='https://placehold.co/100x50?text=Swachh+Bharat'">
+                                <span class="text-[7.5px] font-bold text-gray-600 tracking-tighter text-center leading-none uppercase mt-1">एक कदम स्वच्छता की ओर</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-lightyellow p-8 rounded-3xl border border-yellow-100 space-y-4 flex flex-col justify-center">
                         <div class="w-16 h-16 bg-brand-yellow/20 text-brand-red text-2xl flex items-center justify-center rounded-2xl mx-auto">
                             <i class="fa-solid fa-truck-fast"></i>
                         </div>
@@ -348,7 +371,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-brand-lightyellow border-t border-yellow-100">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
                 <div class="space-y-2">
@@ -361,22 +383,24 @@
                     <form id="orderForm" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">Aapka Naam / Name</label>
+                                <label class="text-sm font-bold text-gray-700" for="cust-name">Aapka Naam / Name</label>
                                 <input type="text" id="cust-name" placeholder="Enter Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700">Aapka Mobile Number</label>
+                                <label class="text-sm font-bold text-gray-700" for="cust-phone">Aapka Mobile Number</label>
                                 <input type="tel" id="cust-phone" placeholder="Mobile Number" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
                             </div>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700">Select Snack (Kis snack ke liye inquiry hai?)</label>
-                            <select id="cust-snack" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm bg-white font-medium">
+                            <label class="text-sm font-bold text-gray-700" for="cust-snack">Select Snack (Kis snack ke liye inquiry hai?)</label>
+                            
+                            <!-- FIXED ISSUE 2: Added aria-label for the <select> form element -->
+                            <select id="cust-snack" aria-label="Select Snack item for your inquiry" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm bg-white font-medium">
                                 <option value="General Query">General Query (All Products Catalog)</option>
                             </select>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700">Message / Order Requirements</label>
+                            <label class="text-sm font-bold text-gray-700" for="cust-msg">Message / Order Requirements</label>
                             <textarea id="cust-msg" placeholder="Aapko kitni quantity chahiye ya aapki dukan ka pata (address) kya hai..." rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm"></textarea>
                         </div>
                         <div class="text-center pt-2">
@@ -391,7 +415,7 @@
                     <div class="space-y-1">
                         <i class="fa-solid fa-map-location-dot text-2xl text-brand-red"></i>
                         <p class="font-bold">Dukan / Plant Address</p>
-                        <p class="text-sm text-gray-600">Palasia Road, Indore, Madhya Pradesh</p>
+                        <p class="text-sm text-gray-600">Bhola Colony, Tajpur Road Ludhiana, punjab</p>
                     </div>
                     <div class="space-y-1">
                         <i class="fa-solid fa-phone-volume text-2xl text-brand-red"></i>
@@ -408,10 +432,11 @@
         </section>
     </main>
 
-    <!-- Popups / Modals -->
     <div id="detail-modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl relative border border-amber-100 animate-fadeIn">
-            <button onclick="event.stopPropagation(); closeDetailModal()" class="absolute top-4 right-4 bg-gray-100 hover:bg-brand-red hover:text-white transition-colors p-2.5 rounded-full z-50 shadow-md">
+            
+            <!-- FIXED ISSUE 3: Added aria-label to Detail Modal close button -->
+            <button onclick="event.stopPropagation(); closeDetailModal()" aria-label="Close product detail popup" class="absolute top-4 right-4 bg-gray-100 hover:bg-brand-red hover:text-white transition-colors p-2.5 rounded-full z-50 shadow-md">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <div class="grid md:grid-cols-2">
@@ -449,7 +474,6 @@
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
     <div id="image-lightbox-modal" class="hidden fixed inset-0 z-[60] bg-black/85 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
         <div class="bg-white rounded-3xl overflow-hidden max-w-lg w-full shadow-2xl relative border-4 border-brand-yellow animate-fadeIn p-4 flex flex-col justify-center items-center" onclick="event.stopPropagation()">
             <img id="lightbox-image" src="" alt="Snack Zoom View" class="w-full h-auto max-h-[70vh] object-contain rounded-2xl border border-amber-100 shadow-inner">
@@ -463,7 +487,6 @@
         </div>
     </div>
 
-    <!-- Success Toast Notification -->
     <div id="success-toast" class="hidden fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
         <div class="bg-white p-8 rounded-3xl max-w-md w-full text-center space-y-5 border border-yellow-100 shadow-2xl">
             <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-3xl mx-auto">
@@ -477,21 +500,25 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-brand-brown text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-center border-b border-yellow-900 pb-8">
             <div class="text-center md:text-left space-y-2">
                 <h3 class="text-2xl font-bold font-brand text-brand-yellow">INDORE SNACKS</h3>
                 <p class="text-sm text-amber-200/70">Established in 2003, creating authentic high-quality crisps and traditional namkeens with love for over 20+ glorious years.</p>
+                <div class="text-xs text-amber-100 font-bold tracking-wider mt-1 flex flex-col space-y-0.5">
+                    <span>GSTIN: 03BNCPM2835B1ZM</span>
+                    <span class="text-emerald-400 font-medium">FSSAI Lic No. 22120668000125</span>
+                </div>
             </div>
             <div class="flex justify-center space-x-6 text-xl">
-                <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <!-- FIXED ISSUE 4, 5, 6: Added aria-labels to footer social media icon links -->
+                <a href="#" aria-label="Visit our Facebook page" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Visit our Instagram profile" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Contact us via WhatsApp" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="text-center md:text-right text-sm text-amber-200/70">
-                <p>Mon - Sat: 9:00 AM - 9:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p>Mon - Sat: 8:00 AM - 7:00 PM</p>
+                <p>Sunday: 8:00 AM - 1:00 PM</p>
             </div>
         </div>
         <div class="text-center pt-8 text-xs text-amber-200/40">
@@ -499,7 +526,6 @@
         </div>
     </footer>
 
-    <!-- DATA & SCRIPTS -->
     <script>
         const ALL_PRODUCTS = [
             { id: "p1", sNo: 1, name: " 3D Triangle Crunchy Snacks", category: "healthy", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
@@ -514,14 +540,20 @@
             { id: "p10", sNo: 10, name: " Special Diet Screw Snacks", category: "healthy", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
             { id: "p11", sNo: 11, name: "  Namkeen Jalebi", category: "traditional", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
             { id: "v12", sNo: 12, name: " Special Diet (Vrat Ke Liye - Square)", category: "vrat", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },
-            { id: "p13", sNo: 13, name: " Crunchy Oats Chips", category: "healthy", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
+            { id: "v13", sNo: 13, name: " Crunchy Oats Chips", category: "healthy", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
             { id: "p14", sNo: 14, name: " Soya Katori", category: "soya", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
-            { id: "p15", sNo: 15, name: " Namkeen Jalebi (Combo View)", category: "traditional", description: "Perfect party combo view package of chatpata jalebi namkeen.", sizes: "30pcs", price: "₹75", badge: "Combo Pick", image: "images/A45640B5-0126-43FC-BB0A-10815A6F686D.PNG" },
-            { id: "p16", sNo: 16, name: "Healthy Beetroot Chips", category: "healthy", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
-            { id: "p17", sNo: 17, name: "Special Snacks Ring Style", category: "traditional", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
-            { id: "p18", sNo: 18, name: "Nutritious Multigrain Chips", category: "healthy", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
-            { id: "p19", sNo: 19, name: "Traditional Butter Chakli", category: "traditional", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
-            { id: "p20", sNo: 20, name:  "Refreshing Pudina Chakli", category: "traditional", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" }
+            { id: "p15", sNo: 15, name: "Healthy Beetroot Chips", category: "healthy", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
+            { id: "p16", sNo: 16, name: "Special Snacks Ring Style", category: "traditional", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
+            { id: "p17", sNo: 17, name: "Nutritious Multigrain Chips", category: "healthy", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
+            { id: "p18", sNo: 18, name: "Traditional Butter Chakli", category: "traditional", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
+            { id: "p19", sNo: 19, name: "Traditional Pudina Chakli", category: "traditional", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" },
+            { id: "p20", sNo: 20, name: "Onion Rings", category: "traditional", description: "Flavorful and crunchy ring snacks packed with dynamic onion seasoning.", sizes: "80g", price: "₹50", badge: "Tasty Crunch", image: "images/5A49585D-1A71-4746-B4BB-53F4E07BFB5A.PNG" },
+            { id: "p21", sNo: 21, name: "Seel Laddu", category: "traditional", description: "Authentic traditional sweet-savory soft pops prepared carefully with nutritious ingredients.", sizes: "160g", price: "₹75", badge: "Festive Treat", image: "images/5EEC0F8A-DE06-417C-9AD6-EA6ECB94A2CD.PNG" },
+            { id: "p22", sNo: 22, name: "Karela Chips", category: "healthy", description: "Crisp and bitter-free uniquely sliced healthy vegetable snacks perfect for all age groups.", sizes: "100g", price: "₹100", badge: "Sugar Conscious", image: "images/5F3C7697-A3D4-4D04-91CB-147BA73F2337.PNG" },
+            { id: "p23", sNo: 23, name: "Special Snacks (Star & Cross)", category: "traditional", description: "Fun star-shaped crispy geometric chatpata snacks loved heavily by kids.", sizes: "100g", price: "₹50", badge: "Kids Special", image: "images/9AE9D525-1092-4272-8BD0-29078B48C884.PNG" },
+            { id: "p24", sNo: 24, name: "Pani Puri Chakli", category: "traditional", description: "Tangy twist to traditional chakli featuring crisp updates inspired by authentic street pani puri masalas.", sizes: "100g", price: "₹75", badge: "Chatpata Blast", image: "images/9F626BB8-1260-491C-8C24-1682CCD49418.PNG" },
+            { id: "p25", sNo: 25, name: "Special Snacks (Hollow Sticks)", category: "traditional", description: "Super light pipelined crispy long crunchy bites seasoned with classic Indian chatpata salt.", sizes: "100g", price: "₹50", badge: "Light Weight", image: "images/ChatGPT Image Jun 28, 2026, 11_13_08 AM.png" },
+            { id: "p26", sNo: 26, name: "Special Snacks (White Rings)", category: "traditional", description: "Premium white salted soft rings that instantly melt in the mouth with an incredible crunch.", sizes: "100g", price: "₹50", badge: "Mouth Melting", image: "images/IMG_0120.PNG" }
         ];
 
         let currentActiveTitle = "";
@@ -577,7 +609,7 @@
 
         function populateContactFormDropdown() {
             const dropdown = document.getElementById('cust-snack');
-            dropdown.innerHTML = '<option value="General Query">General Query (All 50+ Products Catalog)</option>';
+            dropdown.innerHTML = '<option value="General Query">General Query (All Products Catalog)</option>';
             
             ALL_PRODUCTS.forEach(item => {
                 dropdown.innerHTML += `<option value="${item.name}">${item.sNo}. ${item.name}</option>`;
