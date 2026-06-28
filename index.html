@@ -68,7 +68,7 @@
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
                     <div class="flex flex-col text-[10px] font-bold text-gray-500 tracking-wider leading-tight">
                         <span>GSTIN: 03BNCPM2835B1ZM</span>
-                    </div>
+                                            </div>
                 </div>
             </div>
             
@@ -265,7 +265,7 @@
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-amber-100 shadow-sm gap-4">
                     <div class="space-y-1">
                         <h2 class="text-2xl md:text-3xl font-black text-brand-brown font-brand">Our Specialties Catalog</h2>
-                        <p class="text-xs text-gray-500 font-semibold uppercase">Showing all premium varieties below including specific Faraali section! 🌟</p>
+                        <p class="text-xs text-gray-500 font-semibold uppercase">Showing all premium varieties below dynamically filtered! 🌟</p>
                     </div>
                 </div>
 
@@ -275,11 +275,11 @@
                         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400"></i>
                     </div>
                     <div class="flex flex-wrap gap-2 justify-center w-full lg:w-auto">
-                        <button class="filter-btn active bg-brand-red text-white py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow" onclick="filterCategory('all', this)">All Snacks</button>
-                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('healthy', this)">Snacks</button>
-                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('soya', this)">Soya Snacks</button>
-                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('traditional', this)">Traditional & Mix</button>
-                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('wafers', this)">Wafers & Sev</button>
+                        <button class="filter-btn active bg-brand-red text-white py-2 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow" onclick="filterCategory('all', this)">All Snacks</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('chakli', this)">Chakli</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('sticks_chips', this)">Sticks & Chips</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('wafers', this)">Wafers</button>
+                        <button class="filter-btn bg-amber-50 text-brand-brown border border-brand-yellow/30 py-2 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:bg-brand-red hover:text-white" onclick="filterCategory('snacks', this)">Snacks</button>
                     </div>
                 </div>
 
@@ -332,16 +332,17 @@
                     </div>
                     
                     <div class="bg-brand-lightyellow p-8 rounded-3xl border-2 border-emerald-500 space-y-5 shadow-lg bg-gradient-to-b from-white to-emerald-50/30 relative">
+                                           
+                
                         
-                    
                         <div class="grid grid-cols-2 gap-4 pt-2">
                             <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
-                                <img src="/images/make-in-india-logo.png" alt="Make In India" class="w-full h-15 object-contain" onerror="this.src='https://placehold.co/100x50?text=Make+In+India'">
+                                <img src="/images/make-in-india-logo.png" alt="Make In India" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x50?text=Make+In+India'">
                                 <span class="text-[9px] font-extrabold text-black tracking-tight uppercase mt-1">MAKE IN INDIA</span>
                             </div>
                             
                             <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
-                                <img src="images/swach-bharat-logo.png" alt="Swachh Bharat" class="w-full h-15 object-contain" onerror="this.src='https://placehold.co/100x50?text=Swachh+Bharat'">
+                                <img src="/images/swach-bharat-logo.png" alt="Swachh Bharat" class="w-full h-12 object-contain" onerror="this.src='https://placehold.co/100x50?text=Swachh+Bharat'">
                                 <span class="text-[7.5px] font-bold text-gray-600 tracking-tighter text-center leading-none uppercase mt-1">एक कदम स्वच्छता की ओर</span>
                             </div>
                         </div>
@@ -367,10 +368,8 @@
                 </div>
                 
                 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-yellow-100">
-                    <!-- CONNECTED TO BACKEND SUBMISSION VIA FORMSUBMIT -->
                     <form id="orderForm" action="https://formsubmit.co/ibwn2024@gmail.com" method="POST" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
                         
-                        <!-- Configuration options for FormSubmit backend email formatting -->
                         <input type="hidden" name="_subject" value="New Website Snack Order Inquiry!">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
@@ -516,33 +515,34 @@
     </footer>
 
     <script>
+        // REDISTRIBUTED CATEGORIES ACCORDING TO USER REQUIREMENT: chakli, sticks_chips, wafers, snacks
         const ALL_PRODUCTS = [
-            { id: "p1", sNo: 1, name: " 3D Triangle Crunchy Snacks", category: "healthy", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
+            { id: "p1", sNo: 1, name: " 3D Triangle Crunchy Snacks", category: "snacks", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
             { id: "p2", sNo: 2, name: " Banana Chips", category: "wafers", description: "Crispy banana slices seasoned with fine chatpata spices.", sizes: "100g", price: "₹70", badge: "Best Seller", image: "images/IMG_0111.PNG" },
-            { id: "p3", sNo: 3, name: " Soya Chips Pudina Flavor", category: "soya", description: "Healthy Soya chips flavored with a punch of fresh green mint extracts.", sizes: "200g", price: "₹90", badge: "Mint Special", image: "images/IMG_0112.PNG" },
-            { id: "p4", sNo: 4, name: " Crispy Soya Sticks", category: "soya", description: "Nutritious and light-weight crunchy soya flour sticks.", sizes: "200g", price: "₹90", badge: "High Fiber", image: "images/IMG_0113.PNG" },
-            { id: "v5", sNo: 5, name: " Vrat Ke Liye Special Diet (Pipe)", category: "vrat", description: "Fasting special hollow crunchy pipelined delicious light bites.", sizes: "100g", price: "₹60", badge: "Faraal Safe", image: "images/IMG_0114.PNG" },
-            { id: "p6", sNo: 6, name: " Special Diet Crunchy Waves", category: "healthy", description: "Wave shaped low-fat delicious light healthy snack.", sizes: "100g", price: "₹65", badge: "Diet Friendly", image: "images/IMG_0115.PNG" },
-            { id: "v7", sNo: 7, name: " Navratri Special Banana Wafers", category: "vrat", description: "Pure rock-salted thin golden raw banana slices crafted carefully for fasts.", sizes: "100g", price: "₹70", badge: "Vrat Premium", image: "images/IMG_0116.PNG" },
-            { id: "p8", sNo: 8, name: " Special Diet Spiral Twist", category: "healthy", description: "Fun spiral shape with ultimate crunchy unique flavor.", sizes: "100g", price: "₹60", badge: "Kids Choice", image: "images/IMG_0117.PNG" },
-            { id: "p9", sNo: 9, name: " Healthy Raagi Chips", category: "healthy", description: "Super healthy raagi rich flour crisps with premium taste.", sizes: "200g", price: "₹100", badge: "Healthy King", image: "images/IMG_0118.PNG" },
-            { id: "p10", sNo: 10, name: " Special Diet Screw Snacks", category: "healthy", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
-            { id: "p11", sNo: 11, name: "  Namkeen Jalebi", category: "traditional", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
-            { id: "v12", sNo: 12, name: " Special Diet (Vrat Ke Liye - Square)", category: "vrat", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },
-            { id: "v13", sNo: 13, name: " Crunchy Oats Chips", category: "healthy", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
-            { id: "p14", sNo: 14, name: " Soya Katori", category: "soya", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
-            { id: "p15", sNo: 15, name: "Healthy Beetroot Chips", category: "healthy", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
-            { id: "p16", sNo: 16, name: "Special Snacks Ring Style", category: "traditional", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
-            { id: "p17", sNo: 17, name: "Nutritious Multigrain Chips", category: "healthy", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
-            { id: "p18", sNo: 18, name: "Traditional Butter Chakli", category: "traditional", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
-            { id: "p19", sNo: 19, name: "Traditional Pudina Chakli", category: "traditional", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" },
-            { id: "p20", sNo: 20, name: "Onion Rings", category: "traditional", description: "Flavorful and crunchy ring snacks packed with dynamic onion seasoning.", sizes: "80g", price: "₹50", badge: "Tasty Crunch", image: "images/5A49585D-1A71-4746-B4BB-53F4E07BFB5A.PNG" },
-            { id: "p21", sNo: 21, name: "Seel Laddu", category: "traditional", description: "Authentic traditional sweet-savory soft pops prepared carefully with nutritious ingredients.", sizes: "160g", price: "₹75", badge: "Festive Treat", image: "images/5EEC0F8A-DE06-417C-9AD6-EA6ECB94A2CD.PNG" },
-            { id: "p22", sNo: 22, name: "Karela Chips", category: "healthy", description: "Crisp and bitter-free uniquely sliced healthy vegetable snacks perfect for all age groups.", sizes: "100g", price: "₹100", badge: "Sugar Conscious", image: "images/5F3C7697-A3D4-4D04-91CB-147BA73F2337.PNG" },
-            { id: "p23", sNo: 23, name: "Special Snacks (Star & Cross)", category: "traditional", description: "Fun star-shaped crispy geometric chatpata snacks loved heavily by kids.", sizes: "100g", price: "₹50", badge: "Kids Special", image: "images/9AE9D525-1092-4272-8BD0-29078B48C884.PNG" },
-            { id: "p24", sNo: 24, name: "Pani Puri Chakli", category: "traditional", description: "Tangy twist to traditional chakli featuring crisp updates inspired by authentic street pani puri masalas.", sizes: "100g", price: "₹75", badge: "Chatpata Blast", image: "images/9F626BB8-1260-491C-8C24-1682CCD49418.PNG" },
-            { id: "p25", sNo: 25, name: "Special Snacks (Hollow Sticks)", category: "traditional", description: "Super light pipelined crispy long crunchy bites seasoned with classic Indian chatpata salt.", sizes: "100g", price: "₹50", badge: "Light Weight", image: "images/ChatGPT Image Jun 28, 2026, 11_13_08 AM.png" },
-            { id: "p26", sNo: 26, name: "Special Snacks (White Rings)", category: "traditional", description: "Premium white salted soft rings that instantly melt in the mouth with an incredible crunch.", sizes: "100g", price: "₹50", badge: "Mouth Melting", image: "images/IMG_0120.PNG" }
+            { id: "p3", sNo: 3, name: " Soya Chips Pudina Flavor", category: "sticks_chips", description: "Healthy Soya chips flavored with a punch of fresh green mint extracts.", sizes: "200g", price: "₹90", badge: "Mint Special", image: "images/IMG_0112.PNG" },
+            { id: "p4", sNo: 4, name: " Crispy Soya Sticks", category: "sticks_chips", description: "Nutritious and light-weight crunchy soya flour sticks.", sizes: "200g", price: "₹90", badge: "High Fiber", image: "images/IMG_0113.PNG" },
+            { id: "v5", sNo: 5, name: " Vrat Ke Liye Special Diet (Pipe)", category: "sticks_chips", description: "Fasting special hollow crunchy pipelined delicious light bites.", sizes: "100g", price: "₹60", badge: "Faraal Safe", image: "images/IMG_0114.PNG" },
+            { id: "p6", sNo: 6, name: " Special Diet Crunchy Waves", category: "snacks", description: "Wave shaped low-fat delicious light healthy snack.", sizes: "100g", price: "₹65", badge: "Diet Friendly", image: "images/IMG_0115.PNG" },
+            { id: "v7", sNo: 7, name: " Navratri Special Banana Wafers", category: "wafers", description: "Pure rock-salted thin golden raw banana slices crafted carefully for fasts.", sizes: "100g", price: "₹70", badge: "Vrat Premium", image: "images/IMG_0116.PNG" },
+            { id: "p8", sNo: 8, name: " Special Diet Spiral Twist", category: "snacks", description: "Fun spiral shape with ultimate crunchy unique flavor.", sizes: "100g", price: "₹60", badge: "Kids Choice", image: "images/IMG_0117.PNG" },
+            { id: "p9", sNo: 9, name: " Healthy Raagi Chips", category: "sticks_chips", description: "Super healthy raagi rich flour crisps with premium taste.", sizes: "200g", price: "₹100", badge: "Healthy King", image: "images/IMG_0118.PNG" },
+            { id: "p10", sNo: 10, name: " Special Diet Screw Snacks", category: "snacks", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
+            { id: "p11", sNo: 11, name: "  Namkeen Jalebi", category: "snacks", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
+            { id: "v12", sNo: 12, name: " Special Diet (Vrat Ke Liye - Square)", category: "snacks", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },
+            { id: "v13", sNo: 13, name: " Crunchy Oats Chips", category: "sticks_chips", description: "Highly nutritious oats crackers beautifully roasted.", sizes: "200g", price: "₹110", badge: "Diet Care", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
+            { id: "p14", sNo: 14, name: " Soya Katori", category: "snacks", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
+            { id: "p15", sNo: 15, name: "Healthy Beetroot Chips", category: "sticks_chips", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
+            { id: "p16", sNo: 16, name: "Special Snacks Ring Style", category: "snacks", description: "Yummy golden rings, incredibly crisp and highly popular among kids.", sizes: "100g", price: "₹50", badge: "Kids Fun", image: "images/D1AB6771-4906-4812-A7D7-FEFBE601CAFA.PNG" },
+            { id: "p17", sNo: 17, name: "Nutritious Multigrain Chips", category: "sticks_chips", description: "Power packed healthy grains combined to make rich delicious chips.", sizes: "200g", price: "₹110", badge: "Multi Nutrient", image: "images/E2F653DF-FE3B-4F69-AD47-E4298B0321D0.PNG" },
+            { id: "p18", sNo: 18, name: "Traditional Butter Chakli", category: "chakli", description: "Melt-in-mouth soft buttery circular traditional chakli sticks.", sizes: "100g", price: "₹75", badge: "Pure Butter", image: "images/E29643CE-30A5-4E01-BB1A-C6330DEDD632.PNG" },
+            { id: "p19", sNo: 19, name: "Traditional Pudina Chakli", category: "chakli", description: "Crisp spiral round snacks with dynamic spicy real pudina herbs.", sizes: "100g", price: "₹75", badge: "Herbal Crunch", image: "images/F55151E2-1D84-4CBA-90A4-1B41CE523AC4.PNG" },
+            { id: "p20", sNo: 20, name: "Onion Rings", category: "snacks", description: "Flavorful and crunchy ring snacks packed with dynamic onion seasoning.", sizes: "80g", price: "₹50", badge: "Tasty Crunch", image: "images/5A49585D-1A71-4746-B4BB-53F4E07BFB5A.PNG" },
+            { id: "p21", sNo: 21, name: "Seel Laddu", category: "snacks", description: "Authentic traditional sweet-savory soft pops prepared carefully with nutritious ingredients.", sizes: "160g", price: "₹75", badge: "Festive Treat", image: "images/5EEC0F8A-DE06-417C-9AD6-EA6ECB94A2CD.PNG" },
+            { id: "p22", sNo: 22, name: "Karela Chips", category: "sticks_chips", description: "Crisp and bitter-free uniquely sliced healthy vegetable snacks perfect for all age groups.", sizes: "100g", price: "₹100", badge: "Sugar Conscious", image: "images/5F3C7697-A3D4-4D04-91CB-147BA73F2337.PNG" },
+            { id: "p23", sNo: 23, name: "Special Snacks (Star & Cross)", category: "snacks", description: "Fun star-shaped crispy geometric chatpata snacks loved heavily by kids.", sizes: "100g", price: "₹50", badge: "Kids Special", image: "images/9AE9D525-1092-4272-8BD0-29078B48C884.PNG" },
+            { id: "p24", sNo: 24, name: "Pani Puri Chakli", category: "chakli", description: "Tangy twist to traditional chakli featuring crisp updates inspired by authentic street pani puri masalas.", sizes: "100g", price: "₹75", badge: "Chatpata Blast", image: "images/9F626BB8-1260-491C-8C24-1682CCD49418.PNG" },
+            { id: "p25", sNo: 25, name: "Special Snacks (Hollow Sticks)", category: "sticks_chips", description: "Super light pipelined crispy long crunchy bites seasoned with classic Indian chatpata salt.", sizes: "100g", price: "₹50", badge: "Light Weight", image: "images/ChatGPT Image Jun 28, 2026, 11_13_08 AM.png" },
+            { id: "p26", sNo: 26, name: "Special Snacks (White Rings)", category: "snacks", description: "Premium white salted soft rings that instantly melt in the mouth with an incredible crunch.", sizes: "100g", price: "₹50", badge: "Mouth Melting", image: "images/IMG_0120.PNG" }
         ];
 
         let currentActiveTitle = "";
@@ -567,14 +567,15 @@
             vratGrid.innerHTML = '';
 
             ALL_PRODUCTS.forEach(item => {
-                const isVratItem = (item.category === 'vrat');
+                // For layout purposes, keep v5, v7, v12, v13 in their designated structural grid tags
+                const isVratLayoutItem = (item.id.startsWith('v'));
                 const finalImgSrc = item.image ? item.image : `https://placehold.co/600x400/FFFBEB/451A03?text=S.No+${item.sNo}`;
                 
                 const cardHtml = `
-                    <div class="product-card bg-white rounded-3xl overflow-hidden border ${isVratItem ? 'border-yellow-200' : 'border-amber-100'} shadow-sm flex flex-col justify-between" data-category="${item.category}" data-name="${item.name.toLowerCase()}">
-                        <div class="h-44 bg-amber-50/60 border-b border-amber-100 overflow-hidden relative group cursor-pointer" onclick="openDetailModal('${item.name}', '${item.id}', '${item.description}', '${item.sizes}', '${item.price}', ${isVratItem}, '${finalImgSrc}')">
+                    <div class="product-card bg-white rounded-3xl overflow-hidden border ${isVratLayoutItem ? 'border-yellow-200' : 'border-amber-100'} shadow-sm flex flex-col justify-between" data-category="${item.category}" data-name="${item.name.toLowerCase()}">
+                        <div class="h-44 bg-amber-50/60 border-b border-amber-100 overflow-hidden relative group cursor-pointer" onclick="openDetailModal('${item.name}', '${item.id}', '${item.description}', '${item.sizes}', '${item.price}', ${isVratLayoutItem}, '${finalImgSrc}')">
                             <img src="${finalImgSrc}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/FFFBEB/451A03?text=S.No+${item.sNo}'">
-                            <span class="absolute top-3 left-3 ${isVratItem ? 'bg-amber-500' : 'bg-brand-red'} text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase shadow-sm">S.No. ${item.sNo} - ${item.badge}</span>
+                            <span class="absolute top-3 left-3 ${isVratLayoutItem ? 'bg-amber-500' : 'bg-brand-red'} text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase shadow-sm">S.No. ${item.sNo} - ${item.badge}</span>
                         </div>
                         <div class="p-5 text-left flex-grow flex flex-col justify-between space-y-2">
                             <div>
@@ -583,12 +584,12 @@
                             </div>
                             <div class="flex justify-between items-center pt-2 border-t border-amber-50">
                                 <span class="text-[11px] font-bold text-brand-red">${item.sizes} | ${item.price}</span>
-                                <button class="text-brand-red font-bold text-[11px] hover:underline" onclick="openDetailModal('${item.name}', '${item.id}', '${item.description}', '${item.sizes}', '${item.price}', ${isVratItem}, '${finalImgSrc}')">Details</button>
+                                <button class="text-brand-red font-bold text-[11px] hover:underline" onclick="openDetailModal('${item.name}', '${item.id}', '${item.description}', '${item.sizes}', '${item.price}', ${isVratLayoutItem}, '${finalImgSrc}')">Details</button>
                             </div>
                         </div>
                     </div>`;
 
-                if (isVratItem) {
+                if (isVratLayoutItem) {
                     vratGrid.insertAdjacentHTML('beforeend', cardHtml);
                 } else {
                     generalGrid.insertAdjacentHTML('beforeend', cardHtml);
@@ -637,8 +638,9 @@
             });
 
             document.querySelectorAll('#vrat-product-grid .product-card').forEach(card => {
+                const cat = card.getAttribute('data-category');
                 const name = card.getAttribute('data-name');
-                if ((activeCategory === 'all' || activeCategory === 'vrat') && name.includes(searchQuery)) {
+                if ((activeCategory === 'all' || cat === activeCategory) && name.includes(searchQuery)) {
                     card.style.display = 'block'; vCount++;
                 } else card.style.display = 'none';
             });
@@ -687,14 +689,12 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // AJAX background handling to email the form details silently without leaving page
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = document.getElementById('orderForm');
             const name = document.getElementById('cust-name').value;
             const snack = document.getElementById('cust-snack').value;
             
-            // Sending code seamlessly to FormSubmit backend URL
             fetch(form.action, {
                 method: "POST",
                 body: new FormData(form),
