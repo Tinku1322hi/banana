@@ -66,9 +66,8 @@
                 <div>
                     <h1 class="text-xl md:text-2xl font-black text-brand-red font-brand tracking-wide">INDORE</h1>
                     <p class="text-[9px] md:text-[11px] font-bold text-brand-darkyellow tracking-widest uppercase">Banana Wafers & Namkeen</p>
-                    <div class="flex flex-col text-[8px] font-bold text-gray-500 tracking-wider leading-tight">
+                    <div class="flex flex-col text-[10px] font-bold text-gray-500 tracking-wider leading-tight">
                         <span>GSTIN: 03BNCPM2835B1ZM</span>
-                        <span class="text-emerald-600 font-semibold flex items-center gap-0.5">🟢 FSSAI Lic: 22120668000125</span>
                     </div>
                 </div>
             </div>
@@ -87,7 +86,6 @@
                 </a>
             </div>
 
-            <!-- FIXED ISSUE 1: Added aria-label for Mobile Menu Toggle Button -->
             <button id="mobile-menu-btn" class="md:hidden text-brand-red text-2xl focus:outline-none" aria-label="Toggle mobile navigation menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -198,10 +196,7 @@
                             <i class="fa-solid fa-circle-check text-green-500"></i>
                             <span>Fully Hygienic</span>
                         </div>
-                        <div class="flex items-center space-x-2 text-brand-red font-semibold text-lg">
-                            <i class="fa-solid fa-circle-check text-green-500"></i>
-                            <span>📋 FSSAI Approved</span>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -337,24 +332,16 @@
                     </div>
                     
                     <div class="bg-brand-lightyellow p-8 rounded-3xl border-2 border-emerald-500 space-y-5 shadow-lg bg-gradient-to-b from-white to-emerald-50/30 relative">
-                        <div class="w-16 h-12 bg-emerald-100 text-emerald-600 text-2xl flex items-center justify-center rounded-xl mx-auto font-black tracking-tighter">
-                            fssai
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="text-xl font-bold text-emerald-800">Govt. Approved Quality</h3>
-                            <p class="text-xs bg-emerald-600 text-white font-mono py-1 px-3 rounded-md inline-block tracking-wide font-bold">Lic No. 22120668000125</p>
-                        </div>
                         
-                        <div class="border-t border-dashed border-emerald-200 my-2"></div>
-                        
+                    
                         <div class="grid grid-cols-2 gap-4 pt-2">
                             <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
-                                <img src="images/make-in-india-logo.png" alt="Make In India" class="w-full h-12 object-contain" onerror="this.src='https://placehold.co/100x50?text=Make+In+India'">
+                                <img src="/images/make-in-india-logo.png" alt="Make In India" class="w-full h-15 object-contain" onerror="this.src='https://placehold.co/100x50?text=Make+In+India'">
                                 <span class="text-[9px] font-extrabold text-black tracking-tight uppercase mt-1">MAKE IN INDIA</span>
                             </div>
                             
                             <div class="flex flex-col items-center justify-between p-2 bg-white rounded-2xl border border-gray-200 shadow-sm min-h-[95px]">
-                                <img src="images/swach-bharat-logo.png" alt="Swachh Bharat" class="w-full h-12 object-contain" onerror="this.src='https://placehold.co/100x50?text=Swachh+Bharat'">
+                                <img src="images/swach-bharat-logo.png" alt="Swachh Bharat" class="w-full h-15 object-contain" onerror="this.src='https://placehold.co/100x50?text=Swachh+Bharat'">
                                 <span class="text-[7.5px] font-bold text-gray-600 tracking-tighter text-center leading-none uppercase mt-1">एक कदम स्वच्छता की ओर</span>
                             </div>
                         </div>
@@ -380,28 +367,33 @@
                 </div>
                 
                 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-yellow-100">
-                    <form id="orderForm" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
+                    <!-- CONNECTED TO BACKEND SUBMISSION VIA FORMSUBMIT -->
+                    <form id="orderForm" action="https://formsubmit.co/ibwn2024@gmail.com" method="POST" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
+                        
+                        <!-- Configuration options for FormSubmit backend email formatting -->
+                        <input type="hidden" name="_subject" value="New Website Snack Order Inquiry!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label class="text-sm font-bold text-gray-700" for="cust-name">Aapka Naam / Name</label>
-                                <input type="text" id="cust-name" placeholder="Enter Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                                <input type="text" name="Customer Name" id="cust-name" placeholder="Enter Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-sm font-bold text-gray-700" for="cust-phone">Aapka Mobile Number</label>
-                                <input type="tel" id="cust-phone" placeholder="Mobile Number" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                                <input type="tel" name="Mobile Number" id="cust-phone" placeholder="Mobile Number" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
                             </div>
                         </div>
                         <div class="space-y-2">
                             <label class="text-sm font-bold text-gray-700" for="cust-snack">Select Snack (Kis snack ke liye inquiry hai?)</label>
-                            
-                            <!-- FIXED ISSUE 2: Added aria-label for the <select> form element -->
-                            <select id="cust-snack" aria-label="Select Snack item for your inquiry" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm bg-white font-medium">
+                            <select name="Selected Snack Product" id="cust-snack" aria-label="Select Snack item for your inquiry" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm bg-white font-medium">
                                 <option value="General Query">General Query (All Products Catalog)</option>
                             </select>
                         </div>
                         <div class="space-y-2">
                             <label class="text-sm font-bold text-gray-700" for="cust-msg">Message / Order Requirements</label>
-                            <textarea id="cust-msg" placeholder="Aapko kitni quantity chahiye ya aapki dukan ka pata (address) kya hai..." rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm"></textarea>
+                            <textarea name="Message Details" id="cust-msg" placeholder="Aapko kitni quantity chahiye ya aapki dukan ka pata (address) kya hai..." rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm"></textarea>
                         </div>
                         <div class="text-center pt-2">
                             <button type="submit" class="bg-brand-red hover:bg-brand-darkred text-white text-lg font-bold py-3 px-12 rounded-full transition-all shadow-md w-full sm:w-auto">
@@ -434,8 +426,6 @@
 
     <div id="detail-modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl relative border border-amber-100 animate-fadeIn">
-            
-            <!-- FIXED ISSUE 3: Added aria-label to Detail Modal close button -->
             <button onclick="event.stopPropagation(); closeDetailModal()" aria-label="Close product detail popup" class="absolute top-4 right-4 bg-gray-100 hover:bg-brand-red hover:text-white transition-colors p-2.5 rounded-full z-50 shadow-md">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -511,7 +501,6 @@
                 </div>
             </div>
             <div class="flex justify-center space-x-6 text-xl">
-                <!-- FIXED ISSUE 4, 5, 6: Added aria-labels to footer social media icon links -->
                 <a href="#" aria-label="Visit our Facebook page" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#" aria-label="Visit our Instagram profile" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" aria-label="Contact us via WhatsApp" class="hover:text-brand-yellow transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
@@ -698,13 +687,27 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // AJAX background handling to email the form details silently without leaving page
         function handleFormSubmit(event) {
             event.preventDefault();
+            const form = document.getElementById('orderForm');
             const name = document.getElementById('cust-name').value;
             const snack = document.getElementById('cust-snack').value;
-            document.getElementById('toast-message').innerHTML = `Dhanyawad <strong>${name}</strong>! Aapka enquiry form <strong>"${snack}"</strong> ke liye humare pass safe receive ho gaya h.`;
-            document.getElementById('success-toast').classList.remove('hidden');
-            document.getElementById('orderForm').reset();
+            
+            // Sending code seamlessly to FormSubmit backend URL
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                document.getElementById('toast-message').innerHTML = `Dhanyawad <strong>${name}</strong>! Aapka enquiry form <strong>"${snack}"</strong> ke liye humare pass safe receive ho gaya h aur humne aapko email bhej diya hai.`;
+                document.getElementById('success-toast').classList.remove('hidden');
+                form.reset();
+            })
+            .catch(error => {
+                alert("Oops! Form submit karne me dikkat aayi, kripya direct WhatsApp par contact karein.");
+            });
         }
 
         function closeSuccessToast() { document.getElementById('success-toast').classList.add('hidden'); }
