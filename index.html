@@ -368,7 +368,7 @@
                 </div>
                 
                 <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-yellow-100">
-                    <form id="orderForm" action="https://formsubmit.co/ibwn2024@gmail.com" method="POST" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
+                   <form id="orderForm" action="https://formsubmit.co/ibwn2024@gmail.com" method="POST" class="space-y-6 text-left" onsubmit="handleFormSubmit(event)">
                         
                         <input type="hidden" name="_subject" value="New Website Snack Order Inquiry!">
                         <input type="hidden" name="_template" value="table">
@@ -376,20 +376,36 @@
 
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700" for="cust-name">Aapka Naam / Name</label>
+                                <label class="text-sm font-bold text-gray-700" for="cust-name">Aapka Naam / Name <span class="text-red-500">*</span></label>
                                 <input type="text" name="Customer Name" id="cust-name" placeholder="Enter Name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                                <p id="name-error" class="text-xs text-brand-red hidden font-semibold">Kripya apna sahi naam bharein.</p>
                             </div>
                             <div class="space-y-2">
-                                <label class="text-sm font-bold text-gray-700" for="cust-phone">Aapka Mobile Number</label>
-                                <input type="tel" name="Mobile Number" id="cust-phone" placeholder="Mobile Number" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                                <label class="text-sm font-bold text-gray-700" for="cust-phone">Aapka Mobile Number <span class="text-red-500">*</span></label>
+                                <input type="tel" name="Mobile Number" id="cust-phone" placeholder="10 Digits Mobile Number" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm">
+                                <p id="phone-error" class="text-xs text-brand-red hidden font-semibold">Kripya 10 अंकों ka sahi mobile number bharein.</p>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold text-gray-700" for="cust-snack">Select Snack (Kis snack ke liye inquiry hai?)</label>
-                            <select name="Selected Snack Product" id="cust-snack" aria-label="Select Snack item for your inquiry" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm bg-white font-medium">
-                                <option value="General Query">General Query (All Products Catalog)</option>
-                            </select>
+                        
+                       <div class="space-y-2 relative">
+                            <label class="text-sm font-bold text-gray-700">Select Snacks (Aap ek ya ek se zyada snacks chun sakte hain)</label>
+                            
+                            <!-- ड्रॉपडाउन बटन जो दिखेगा -->
+                            <div id="dropdown-button" onclick="toggleDropdown(event)" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm font-medium flex justify-between items-center cursor-pointer select-none">
+                                <span id="dropdown-selected-text" class="text-gray-700 truncate">General Query (All Products Catalog)</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 transition-transform duration-200" id="dropdown-arrow"></i>
+                            </div>
+                            
+                            <!-- अंदर छिपने और खुलने वाली चेकबॉक्स लिस्ट -->
+                            <div id="snacks-dropdown-menu" class="hidden absolute left-0 right-0 z-50 mt-1 p-4 rounded-xl border border-gray-200 bg-white shadow-xl max-h-60 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fadeIn">
+                                <div class="flex items-center space-x-2 pb-2 col-span-full border-b border-gray-100">
+                                    <input type="checkbox" id="chk-general" checked onchange="updateDropdownText()" class="w-4 h-4 text-brand-red border-gray-300 rounded focus:ring-brand-red">
+                                    <label for="chk-general" class="text-sm font-bold text-brand-brown cursor-pointer">General Query (All Products Catalog)</label>
+                                </div>
+                                <!-- बाकी सारे प्रोडक्ट्स यहाँ JavaScript से लोड होंगे -->
+                            </div>
                         </div>
+
                         <div class="space-y-2">
                             <label class="text-sm font-bold text-gray-700" for="cust-msg">Message / Order Requirements</label>
                             <textarea name="Message Details" id="cust-msg" placeholder="Aapko kitni quantity chahiye ya aapki dukan ka pata (address) kya hai..." rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand-red text-sm"></textarea>
@@ -515,7 +531,7 @@
     </footer>
 
     <script>
-        // REDISTRIBUTED CATEGORIES ACCORDING TO USER REQUIREMENT: chakli, sticks_chips, wafers, snacks
+       // REDISTRIBUTED CATEGORIES ACCORDING TO USER REQUIREMENT: chakli, sticks_chips, wafers, snacks
         const ALL_PRODUCTS = [
             { id: "p1", sNo: 1, name: " 3D Triangle Crunchy Snacks", category: "snacks", description: "Deliciously crispy 3D shaped dynamic triangle snacks.", sizes: "150g", price: "₹70", badge: "Crunchy", image: "images/IMG_0110.PNG" },
             { id: "p2", sNo: 2, name: " Banana Chips", category: "wafers", description: "Crispy banana slices seasoned with fine chatpata spices.", sizes: "100g", price: "₹70", badge: "Best Seller", image: "images/IMG_0111.PNG" },
@@ -528,7 +544,6 @@
             { id: "p9", sNo: 9, name: " Healthy Raagi Chips", category: "sticks_chips", description: "Super healthy raagi rich flour crisps with premium taste.", sizes: "200g", price: "₹100", badge: "Healthy King", image: "images/IMG_0118.PNG" },
             { id: "p10", sNo: 10, name: " Special Diet Screw Snacks", category: "snacks", description: "Crispy screw styled traditional textured bites.", sizes: "100g", price: "₹65", badge: "Light Bite", image: "images/IMG_0119.PNG" },
             { id: "p11", sNo: 11, name: "  Namkeen Jalebi", category: "snacks", description: "Unique savory jalebi shaped tasty traditional snacks.", sizes: "30pcs", price: "₹75", badge: "Unique Special", image: "images/51DE9639-7383-4178-92A5-221523D1027E.PNG" },
-            /*{ id: "v12", sNo: 12, name: " Special Diet (Vrat Ke Liye - Square)", category: "snacks", description: "Crunchy flat square shaped vrat compliant light diet snack.", sizes: "100g", price: "₹60", badge: "Shudh Faraal", image: "images/85E126DF-DC15-4395-A5BC-A8437DA81B57.PNG" },*/
             { id: "p13", sNo: 13, name: " Oats Chips", category: "sticks_chips", description: "Crispy oats chips prepared carefully with oats flour and tapioca powder.", sizes: "200g", price: "₹110", badge: "Healthy Crunch", image: "images/965F536D-2BFA-4DB5-A677-C5F28B4F9F97.PNG" },
             { id: "p14", sNo: 14, name: " Soya Katori", category: "snacks", description: "Delicious katori shaped soya snack with heavy savory dynamic spices.", sizes: "200g", price: "₹70", badge: "Chatpata Mix", image: "images/47875315-4225-4A8D-AD9B-EBABD3AA8147.PNG" },
             { id: "p15", sNo: 15, name: "Healthy Beetroot Chips", category: "sticks_chips", description: "Stunning red natural beetroot chips made with minimal oils.", sizes: "200g", price: "₹100", badge: "Superfood", image: "images/B471E2D4-D566-40B2-8961-48B6AB6D4F0E.PNG" },
@@ -552,7 +567,19 @@
 
         window.onload = function() {
             renderProductsGrid();
-            populateContactFormDropdown();
+            generateSnackCheckboxes();
+            
+            // ड्रॉपडाउन के बाहर कहीं भी क्लिक करने पर बंद करने के लिए
+            document.addEventListener('click', function(event) {
+                const menu = document.getElementById('snacks-dropdown-menu');
+                const button = document.getElementById('dropdown-button');
+                const arrow = document.getElementById('dropdown-arrow');
+                
+                if (menu && button && !button.contains(event.target) && !menu.contains(event.target)) {
+                    menu.classList.add('hidden');
+                    arrow.classList.remove('rotate-180');
+                }
+            });
         };
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -561,10 +588,65 @@
         mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         function toggleMenu() { mobileMenu.classList.add('hidden'); }
 
+        function toggleDropdown(event) {
+            event.stopPropagation();
+            const menu = document.getElementById('snacks-dropdown-menu');
+            const arrow = document.getElementById('dropdown-arrow');
+            
+            menu.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        function generateSnackCheckboxes() {
+            const container = document.getElementById('snacks-dropdown-menu');
+            if (!container) return;
+            
+            // पुराना पुराना ऑटो-ड्रॉपडाउन साफ़ करें ताकि डुप्लीकेट न बने
+            const items = container.querySelectorAll('.snack-checkbox-item');
+            items.forEach(el => el.remove());
+
+            ALL_PRODUCTS.forEach(item => {
+                const checkboxHtml = `
+                    <div class="flex items-center space-x-2 py-1 snack-checkbox-item">
+                        <input type="checkbox" value="${item.name}" id="chk-${item.id}" onchange="updateDropdownText()" class="snack-checkbox w-4 h-4 text-brand-red border-gray-300 rounded focus:ring-brand-red">
+                        <label for="chk-${item.id}" class="text-xs font-medium text-gray-700 cursor-pointer hover:text-brand-red transition-colors">${item.sNo}. ${item.name}</label>
+                    </div>`;
+                container.insertAdjacentHTML('beforeend', checkboxHtml);
+            });
+        }
+
+        function updateDropdownText() {
+            const textSpan = document.getElementById('dropdown-selected-text');
+            if (!textSpan) return;
+            let selected = [];
+            
+            if (document.getElementById('chk-general').checked) {
+                selected.push("General Query");
+            }
+            
+            document.querySelectorAll('.snack-checkbox').forEach(cb => {
+                if (cb.checked) {
+                    selected.push(cb.value);
+                }
+            });
+            
+            if (selected.length === 0) {
+                textSpan.innerText = "Select Snacks...";
+                textSpan.classList.add('text-gray-400');
+            } else if (selected.length === 1) {
+                textSpan.innerText = selected[0] === "General Query" ? "General Query (All Products Catalog)" : selected[0];
+                textSpan.classList.remove('text-gray-400');
+            } else {
+                textSpan.innerText = `${selected.length} Items Selected`;
+                textSpan.classList.remove('text-gray-400');
+            }
+        }
+
         function renderProductsGrid() {
             const generalGrid = document.getElementById('product-grid');
             const vratGrid = document.getElementById('vrat-product-grid');
             
+            if(!generalGrid || !vratGrid) return;
             generalGrid.innerHTML = '';
             vratGrid.innerHTML = '';
 
@@ -598,19 +680,12 @@
             });
         }
 
-        function populateContactFormDropdown() {
-            const dropdown = document.getElementById('cust-snack');
-            dropdown.innerHTML = '<option value="General Query">General Query (All Products Catalog)</option>';
-            
-            ALL_PRODUCTS.forEach(item => {
-                dropdown.innerHTML += `<option value="${item.name}">${item.sNo}. ${item.name}</option>`;
-            });
-        }
-
         const searchInput = document.getElementById('search-input');
         let activeCategory = 'all';
 
-        searchInput.addEventListener('input', runFilters);
+        if(searchInput) {
+            searchInput.addEventListener('input', runFilters);
+        }
 
         function filterCategory(category, buttonElement) {
             document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -624,7 +699,7 @@
         }
 
         function runFilters() {
-            const searchQuery = searchInput.value.toLowerCase().trim();
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : "";
             const generalGrid = document.getElementById('product-grid');
             const vratSection = document.getElementById('vrat-section');
             
@@ -646,11 +721,12 @@
                 } else card.style.display = 'none';
             });
 
-            vratSection.style.display = (vCount > 0) ? 'block' : 'none';
-            document.getElementById('empty-search-state').classList.toggle('hidden', gCount > 0 || vCount > 0);
+            if(vratSection) vratSection.style.display = (vCount > 0) ? 'block' : 'none';
+            const emptyState = document.getElementById('empty-search-state');
+            if(emptyState) emptyState.classList.toggle('hidden', gCount > 0 || vCount > 0);
         }
 
-        function clearSearch() { searchInput.value = ''; filterCategory('all', document.querySelector('.filter-btn')); }
+        function clearSearch() { if(searchInput) searchInput.value = ''; filterCategory('all', document.querySelector('.filter-btn')); }
 
         function openDetailModal(title, id, description, sizes, price, isVrat, imageSrc) {
             document.getElementById('modal-title').innerText = title;
@@ -684,27 +760,90 @@
         function closeLightbox() { document.getElementById('image-lightbox-modal').classList.add('hidden'); }
 
         function selectSnackInForm() {
-            const selectDropdown = document.getElementById('cust-snack');
-            selectDropdown.value = currentActiveTitle;
+            document.getElementById('chk-general').checked = false;
+            
+            const allCheckboxes = document.querySelectorAll('.snack-checkbox');
+            allCheckboxes.forEach(cb => {
+                if (cb.value === currentActiveTitle) {
+                    cb.checked = true;
+                } else {
+                    cb.checked = false;
+                }
+            });
+            
+            updateDropdownText();
             closeDetailModal();
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
         function handleFormSubmit(event) {
             event.preventDefault();
-            const form = document.getElementById('orderForm');
-            const name = document.getElementById('cust-name').value;
-            const snack = document.getElementById('cust-snack').value;
             
+            const form = document.getElementById('orderForm');
+            const nameInput = document.getElementById('cust-name');
+            const phoneInput = document.getElementById('cust-phone');
+            const nameError = document.getElementById('name-error');
+            const phoneError = document.getElementById('phone-error');
+            
+            let isValid = true;
+
+            if (nameInput.value.trim().length < 2) {
+                nameError.classList.remove('hidden');
+                nameInput.classList.add('border-brand-red');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+                nameInput.classList.remove('border-brand-red');
+            }
+
+            const phonePattern = /^[6-9]\d{9}$/;
+            if (!phonePattern.test(phoneInput.value.trim())) {
+                phoneError.classList.remove('hidden');
+                phoneInput.classList.add('border-brand-red');
+                isValid = false;
+            } else {
+                phoneError.classList.add('hidden');
+                phoneInput.classList.remove('border-brand-red');
+            }
+
+            if (!isValid) {
+                return false;
+            }
+
+            let selectedSnacks = [];
+            if (document.getElementById('chk-general').checked) {
+                selectedSnacks.push("General Query");
+            }
+            
+            document.querySelectorAll('.snack-checkbox').forEach(cb => {
+                if (cb.checked) {
+                    selectedSnacks.push(cb.value);
+                }
+            });
+
+            if (selectedSnacks.length === 0) {
+                alert("Kripya kam se kam ek product ya General Query select karein.");
+                return false;
+            }
+
+            const snacksDisplayString = selectedSnacks.join(", ");
+            
+            const formData = new FormData(form);
+            formData.append('Selected Snack Products', snacksDisplayString);
+
             fetch(form.action, {
                 method: "POST",
-                body: new FormData(form),
+                body: formData,
                 headers: { 'Accept': 'application/json' }
             })
             .then(response => {
-                document.getElementById('toast-message').innerHTML = `Dhanyawad <strong>${name}</strong>! Aapka enquiry form <strong>"${snack}"</strong> ke liye humare pass safe receive ho gaya h aur humne aapko email bhej diya hai.`;
+                document.getElementById('toast-message').innerHTML = `Dhanyawad <strong>${nameInput.value}</strong>! Aapka enquiry form <strong>"${snacksDisplayString}"</strong> ke liye humare pass safe receive ho gaya hai hum jald hi aap se contact karenge.`;
                 document.getElementById('success-toast').classList.remove('hidden');
                 form.reset();
+                
+                document.querySelectorAll('.snack-checkbox').forEach(cb => cb.checked = false);
+                document.getElementById('chk-general').checked = true;
+                updateDropdownText();
             })
             .catch(error => {
                 alert("Oops! Form submit karne me dikkat aayi, kripya direct WhatsApp par contact karein.");
